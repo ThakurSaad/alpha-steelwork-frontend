@@ -18,8 +18,8 @@ const Banner = () => {
             </h2>
           </div>
           <div className="text-center">
-            <button class="btn btn-lg btn-primary">Our solutions</button>
-            <button class="btn btn-lg btn-primary ml-4">Read more</button>
+            <button className="btn btn-lg btn-primary">Our solutions</button>
+            <button className="btn btn-lg btn-primary ml-4">Read more</button>
           </div>
         </div>
       </div>
