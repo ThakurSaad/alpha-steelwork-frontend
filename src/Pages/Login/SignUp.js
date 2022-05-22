@@ -10,7 +10,7 @@ import {
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../Shared/Loading";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -166,6 +166,14 @@ const SignUp = () => {
               value="Sign Up"
             />
           </form>
+          <p className="p-1">
+            <small>
+              Already have an account ?{" "}
+              <Link className="text-primary font-semibold" to="/login">
+                Login
+              </Link>
+            </small>
+          </p>
           <div className="divider">OR</div>
           <div>
             <button
