@@ -12,6 +12,7 @@ import ToolDetails from "./Pages/Home/ToolDetails";
 import AllTool from "./Pages/Home/AllTool";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RequireAuth from "./Pages/Login/RequireAuth";
 
 function App() {
   return (
@@ -21,7 +22,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="allTool" element={<AllTool />} />
-        <Route path="tool/:toolId" element={<ToolDetails />} />
+        <Route
+          path="tool/purchase/:purchaseId"
+          element={
+            <RequireAuth>
+              <ToolDetails />
+            </RequireAuth>
+          }
+        />
         <Route path="blogs" element={<Blogs />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="login" element={<Login />} />

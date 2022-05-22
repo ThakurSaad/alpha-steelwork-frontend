@@ -14,7 +14,7 @@ const Tool = ({ tool }) => {
   const navigate = useNavigate();
 
   const handlePurchase = (_id) => {
-    navigate(`tool/${_id}`);
+    navigate(`tool/purchase/${_id}`);
   };
 
   return (

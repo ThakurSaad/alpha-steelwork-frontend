@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import loginBg from "../../assets/login-bg.jpg";
 import auth from "../../firebase.init";
@@ -15,6 +15,8 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   let errorElement;
   // firebase hooks
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -23,9 +25,9 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       toast.success("Welcome back");
-      navigate("/");
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, from, navigate]);
   if (loading) {
     return <Loading></Loading>;
   }
@@ -51,9 +53,7 @@ const Login = () => {
     >
       <div className="card lg:w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="text-5xl font-bold text-center text-primary">
-            Login
-          </h2>
+          <h2 className="text-5xl font-bold text-center text-primary">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">

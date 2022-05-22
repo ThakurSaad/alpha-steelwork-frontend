@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import google from "../../assets/google.png";
 import auth from "../../firebase.init";
@@ -8,15 +8,17 @@ import Loading from "../Shared/Loading";
 
 const SocialLogin = ({ children }) => {
   const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   let errorElement;
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   useEffect(() => {
     if (gUser) {
       toast.success("Welcome back");
-      navigate("/");
+      navigate(from, { replace: true });
     }
-  }, [gUser, navigate]);
+  }, [gUser, from, navigate]);
   if (gLoading) {
     return <Loading></Loading>;
   }
