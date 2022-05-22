@@ -10,7 +10,7 @@ import {
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../Shared/Loading";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -19,6 +19,8 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   let errorElement;
   // firebase hooks
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -29,9 +31,9 @@ const SignUp = () => {
   useEffect(() => {
     if (user || gUser) {
       toast.success("Sign Up complete");
-      navigate("/");
+      navigate(from, { replace: true });
     }
-  }, [user, gUser, navigate]);
+  }, [user, gUser, from, navigate]);
   if (loading || updating || gLoading) {
     return <Loading></Loading>;
   }

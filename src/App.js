@@ -13,6 +13,9 @@ import AllTool from "./Pages/Home/AllTool";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./Pages/Login/RequireAuth";
+import MyProfile from "./Pages/Dashboard/MyProfile";
+import MyOrders from "./Pages/Dashboard/MyOrders";
+import AddAReview from "./Pages/Dashboard/AddAReview";
 
 function App() {
   return (
@@ -34,7 +37,11 @@ function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="login" element={<Login />} />
         <Route path="signUp" element={<SignUp />} />
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />}>
+          <Route index element={<MyProfile />}></Route>
+          <Route path="myOrders" element={<MyOrders />}></Route>
+          <Route path="addAReview" element={<AddAReview />}></Route>
+        </Route>
       </Routes>
       <Footer />
       <ToastContainer />
