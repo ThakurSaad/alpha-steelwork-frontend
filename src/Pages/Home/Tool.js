@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Tool = ({ tool }) => {
   const {
@@ -10,8 +11,11 @@ const Tool = ({ tool }) => {
     availQuantity,
     price,
   } = tool;
+  const navigate = useNavigate();
 
-  const handlePurchase = () => {};
+  const handlePurchase = (_id) => {
+    navigate(`tool/${_id}`);
+  };
 
   return (
     <div className="card w-72 bg-base-100 shadow-xl p-2">
