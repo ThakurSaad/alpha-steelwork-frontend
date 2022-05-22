@@ -10,3 +10,4 @@
 - tailwind css
 - daisyUI
 - react router V6
+- react fontAwesome
