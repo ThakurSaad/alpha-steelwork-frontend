@@ -1,0 +1,24 @@
+import React from "react";
+
+const Customer = () => {
+  return (
+    <div class="card max-w-sm bg-base-100 shadow-xl rounded-sm">
+      <div class="avatar">
+        <div class="w-20 rounded">
+          <img
+            src="https://api.lorem.space/image/face?hash=80245"
+            alt="Tailwind-CSS-Avatar-component"
+          />
+        </div>
+      </div>
+      <div class="card-body p-2">
+        <h2 class="card-title">Jonathan</h2>
+        <p>
+          They have very skilled blacksmiths. Extremely glad with the product
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Customer;
