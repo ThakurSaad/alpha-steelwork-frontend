@@ -13,3 +13,8 @@
 - react fontAwesome
 - react query
 - react hook form
+- react toastIfy
+
+### Working hours
+
+- Day 1 : `10:00` hours
