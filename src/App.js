@@ -5,7 +5,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/Login/SignUp";
-import Footer from "./Pages/Portfolio/Footer";
+import Footer from "./Pages/Shared/Footer";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Navbar from "./Pages/Shared/Navbar";
 
