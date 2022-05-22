@@ -14,8 +14,9 @@ const Welcome = () => {
           <div>
             <h1 className="text-4xl">
               Welcome to <br />
-              <span className="text-secondary">Alpha Steelwork</span>
+              <span className="text-primary">Alpha Steelwork</span>
             </h1>
+            <hr className="border-2 my-2 border-primary" />
             <p className="py-4">
               A Great Place to Work-Certified organization, we are spread across
               five continents with an employee base of over 65,000.
