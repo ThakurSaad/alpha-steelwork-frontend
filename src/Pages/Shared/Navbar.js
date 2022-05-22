@@ -18,19 +18,22 @@ const Navbar = () => {
       <li>
         <Link to="/portfolio">My Portfolio</Link>
       </li>
-      <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>
       {user ? (
-        <li>
-          <button onClick={() => signOut(auth)}>Sing Out</button>
-        </li>
-      ) : (
         <>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li>
+            <button onClick={() => signOut(auth)}>Sing Out</button>{" "}
+          </li>
+          <li className="text-primary">
+            <Link to="/">{user.displayName}</Link>
           </li>
         </>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
       )}
     </>
   );
