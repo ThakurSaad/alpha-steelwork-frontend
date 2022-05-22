@@ -1,10 +1,13 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 import toolBg from "../../assets/parts-bg.jpg";
 import Loading from "../Shared/Loading";
 import Tool from "./Tool";
 
 const Tools = () => {
+  const navigate = useNavigate();
+
   const { data: tools, isLoading } = useQuery("tools", () =>
     fetch("http://localhost:5000/tools").then((res) => res.json())
   );
@@ -26,9 +29,14 @@ const Tools = () => {
         Tools We Manufacture
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8">
-        {tools.map((tool) => (
+        {tools.slice(0, 6).map((tool) => (
           <Tool key={tool._id} tool={tool}></Tool>
         ))}
+      </div>
+      <div className="text-center my-4">
+        <button class="btn btn-primary" onClick={() => navigate("allTool")}>
+          view all tool
+        </button>
       </div>
     </section>
   );

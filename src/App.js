@@ -9,6 +9,7 @@ import Footer from "./Pages/Shared/Footer";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Navbar from "./Pages/Shared/Navbar";
 import ToolDetails from "./Pages/Home/ToolDetails";
+import AllTool from "./Pages/Home/AllTool";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
+        <Route path="allTool" element={<AllTool />} />
         <Route path="tool/:toolId" element={<ToolDetails />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="portfolio" element={<Portfolio />} />
