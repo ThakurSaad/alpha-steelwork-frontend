@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import loginBg from "../../assets/login-bg.jpg";
+import google from "../../assets/google.png";
 import {
   useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -17,26 +19,27 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  let errorElement;
+  // firebase hooks
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, uError] = useUpdateProfile(auth);
-  let errorElement;
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   useEffect(() => {
-    if (user) {
-      console.log(user);
-      navigate("/");
+    if (user || gUser) {
+      console.log(user || gUser);
+      // navigate("/");
     }
-  }, [user, navigate]);
-  if (loading || updating) {
+  }, [user, gUser, navigate]);
+  if (loading || updating || gLoading) {
     return <Loading></Loading>;
   }
-  if (error || uError) {
-    console.log(error);
+  if (error || uError || gError) {
     errorElement = (
       <p className=" px-1 pb-2">
         <small className="text-red-500">
-          {error?.message || uError?.message}
+          {error?.message || uError?.message || gError.message}
         </small>
       </p>
     );
@@ -47,6 +50,10 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     toast.success("Sign Up complete");
+  };
+
+  const handleGoogleSignUp = () => {
+    signInWithGoogle();
   };
 
   return (
@@ -65,7 +72,7 @@ const SignUp = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-semibold">Name</span>
+                <span className="label-text font-semibold pl-3">Name</span>
               </label>
               <input
                 type="text"
@@ -89,7 +96,7 @@ const SignUp = () => {
 
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-semibold">Email</span>
+                <span className="label-text font-semibold pl-3">Email</span>
               </label>
               <input
                 type="email"
@@ -122,7 +129,7 @@ const SignUp = () => {
 
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text font-semibold">Password</span>
+                <span className="label-text font-semibold pl-3">Password</span>
               </label>
               <input
                 type="password"
@@ -159,6 +166,16 @@ const SignUp = () => {
               value="Sign Up"
             />
           </form>
+          <div className="divider">OR</div>
+          <div>
+            <button
+              className="btn text-primary bg-base-200 border-0 w-full max-w-xs"
+              onClick={handleGoogleSignUp}
+            >
+              <img className="mr-2" src={google} alt="google" /> sing up with
+              google
+            </button>
+          </div>
         </div>
       </div>
     </section>
