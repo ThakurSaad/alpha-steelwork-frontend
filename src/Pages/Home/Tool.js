@@ -1,8 +1,17 @@
 import React from "react";
 
 const Tool = ({ tool }) => {
-  const { image, name, description, minOrderQuantity, availQuantity, price } =
-    tool;
+  const {
+    _id,
+    image,
+    name,
+    description,
+    minOrderQuantity,
+    availQuantity,
+    price,
+  } = tool;
+
+  const handlePurchase = () => {};
 
   return (
     <div className="card w-72 bg-base-100 shadow-xl p-2">
@@ -15,8 +24,13 @@ const Tool = ({ tool }) => {
         <p>Minimum Order Quantity : {minOrderQuantity}/piece</p>
         <p>Available Quantity : {availQuantity}</p>
         <p>Price : {price}$</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+        <div className="card-actions">
+          <button
+            onClick={() => handlePurchase(_id)}
+            className="btn btn-primary"
+          >
+            Purchase
+          </button>
         </div>
       </div>
     </div>
