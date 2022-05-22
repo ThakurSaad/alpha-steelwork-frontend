@@ -28,8 +28,8 @@ const SignUp = () => {
 
   useEffect(() => {
     if (user || gUser) {
-      console.log(user || gUser);
-      // navigate("/");
+      toast.success("Sign Up complete");
+      navigate("/");
     }
   }, [user, gUser, navigate]);
   if (loading || updating || gLoading) {
@@ -49,7 +49,6 @@ const SignUp = () => {
     console.log(data);
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    toast.success("Sign Up complete");
   };
 
   const handleGoogleSignUp = () => {
