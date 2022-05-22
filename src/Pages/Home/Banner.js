@@ -11,7 +11,7 @@ const Banner = () => {
         <div className="absolute top-52 right-0 left-0">
           <div>
             <h1 className="text-7xl text-white font-bold text-center my-4">
-              Welcome to Alpha Steelwork
+              Alpha Steelwork
             </h1>
             <h2 className="text-4xl text-white font-semibold text-center my-4">
               We manufacture products with world class quality{" "}
