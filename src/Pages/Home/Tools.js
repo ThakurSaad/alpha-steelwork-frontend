@@ -34,7 +34,7 @@ const Tools = () => {
         ))}
       </div>
       <div className="text-center my-4">
-        <button class="btn btn-primary" onClick={() => navigate("allTool")}>
+        <button className="btn btn-primary" onClick={() => navigate("allTool")}>
           view all tool
         </button>
       </div>
