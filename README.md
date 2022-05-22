@@ -12,3 +12,4 @@
 - react router V6
 - react fontAwesome
 - react query
+- react hook form
