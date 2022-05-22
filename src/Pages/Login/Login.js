@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
-import {
-  useSignInWithEmailAndPassword,
-  useSignInWithGoogle,
-} from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import loginBg from "../../assets/login-bg.jpg";
-import google from "../../assets/google.png";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const {
@@ -22,33 +19,26 @@ const Login = () => {
   // firebase hooks
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
   useEffect(() => {
-    if (user || gUser) {
+    if (user) {
       toast.success("Welcome back");
       navigate("/");
     }
-  }, [user, gUser, navigate]);
-  if (loading || gLoading) {
+  }, [user, navigate]);
+  if (loading) {
     return <Loading></Loading>;
   }
-  if (error || gError) {
+  if (error) {
     errorElement = (
       <p className=" px-1 pb-2">
-        <small className="text-red-500">
-          {error?.message || gError?.message}
-        </small>
+        <small className="text-red-500">{error?.message}</small>
       </p>
     );
   }
 
   const onSubmit = async (data) => {
     signInWithEmailAndPassword(data.email, data.password);
-  };
-
-  const handleGoogleSignUp = () => {
-    signInWithGoogle();
   };
 
   return (
@@ -62,7 +52,7 @@ const Login = () => {
       <div className="card lg:w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-5xl font-bold text-center text-primary">
-            Sign Up
+            Login
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
@@ -134,7 +124,7 @@ const Login = () => {
             <input
               className="btn btn-primary w-full max-w-xs"
               type="submit"
-              value="Sign Up"
+              value="login"
             />
           </form>
           <p className="p-1">
@@ -146,15 +136,7 @@ const Login = () => {
             </small>
           </p>
           <div className="divider">OR</div>
-          <div>
-            <button
-              className="btn text-primary bg-base-200 border-0 w-full max-w-xs"
-              onClick={handleGoogleSignUp}
-            >
-              <img className="mr-2" src={google} alt="google" /> sing up with
-              google
-            </button>
-          </div>
+          <SocialLogin>Continue with google</SocialLogin>
         </div>
       </div>
     </section>
