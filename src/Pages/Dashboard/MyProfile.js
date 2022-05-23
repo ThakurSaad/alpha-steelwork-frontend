@@ -52,6 +52,7 @@ const MyProfile = () => {
           toast.error("We are sorry. Some error occurred. Please try again");
         }
         console.log(data);
+        refetch();
       });
   };
 
@@ -115,6 +116,7 @@ const MyProfile = () => {
               name="education"
               placeholder="Your Education"
               className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
+              defaultValue={education}
             />
             <label className="label">
               <span className="label-text font-semibold pl-3">Address</span>
@@ -124,6 +126,7 @@ const MyProfile = () => {
               name="address"
               placeholder="Your Address"
               className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
+              defaultValue={address}
             />
             <label className="label">
               <span className="label-text font-semibold pl-3">Contact No</span>
@@ -133,6 +136,7 @@ const MyProfile = () => {
               name="contact"
               placeholder="Your Contact No"
               className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
+              defaultValue={contact}
             />
             <label className="label">
               <span className="label-text font-semibold pl-3">LinkedIn</span>
@@ -142,6 +146,7 @@ const MyProfile = () => {
               name="linkedIn"
               placeholder="LinkedIn Profile Link"
               className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
+              defaultValue={linkedIn}
             />
             <label className="label">
               <span className="label-text font-semibold pl-3">FaceBook</span>
@@ -151,6 +156,7 @@ const MyProfile = () => {
               name="faceBook"
               placeholder="FaceBook Profile Link"
               className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
+              defaultValue={faceBook}
             />
             <label className="label">
               <span className="label-text font-semibold pl-3">Hobby</span>
@@ -160,6 +166,7 @@ const MyProfile = () => {
               name="hobby"
               placeholder="Your hobbies"
               className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
+              defaultValue={hobby}
             />
 
             <input
