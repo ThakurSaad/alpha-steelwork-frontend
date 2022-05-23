@@ -18,7 +18,7 @@ const SocialLogin = ({ children }) => {
   useEffect(() => {
     if (token) {
       toast.success("Welcome back");
-      // navigate(from, { replace: true });
+      navigate(from, { replace: true });
     }
   }, [token, from, navigate]);
   if (gLoading) {

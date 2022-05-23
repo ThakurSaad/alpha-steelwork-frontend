@@ -33,7 +33,7 @@ const SignUp = () => {
   useEffect(() => {
     if (token) {
       toast.success("Sign Up complete");
-      // navigate(from, { replace: true });
+      navigate(from, { replace: true });
     }
   }, [token, from, navigate]);
   if (loading || updating || gLoading) {
