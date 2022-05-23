@@ -50,7 +50,7 @@ const MyOrders = () => {
                     <div className="tooltip" data-tip="Complete Payment">
                       <button
                         className="btn btn-secondary btn-sm text-white"
-                        onClick={() => navigate(`/dashboard/payment`)}
+                        onClick={() => navigate(`/dashboard/payment/${o._id}`)}
                       >
                         pay
                       </button>
