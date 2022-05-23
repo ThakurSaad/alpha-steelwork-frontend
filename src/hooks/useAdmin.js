@@ -10,6 +10,8 @@ const useAdmin = (user) => {
       .then((data) => {
         if (data.admin) {
           setAdmin(data.admin);
+        } else {
+          setAdmin(false);
         }
         setAdminLoading(false);
       });

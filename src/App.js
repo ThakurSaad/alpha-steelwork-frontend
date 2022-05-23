@@ -18,6 +18,9 @@ import MyOrders from "./Pages/Dashboard/MyOrders";
 import AddAReview from "./Pages/Dashboard/AddAReview";
 import Payment from "./Pages/Dashboard/Payment";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
+import ManageOrders from "./Pages/Dashboard/ManageOrders";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import ManageProducts from "./Pages/Dashboard/ManageProducts";
 
 function App() {
   return (
@@ -52,6 +55,9 @@ function App() {
           <Route path="payment/:payForId" element={<Payment />}></Route>
           <Route path="addAReview" element={<AddAReview />}></Route>
           <Route path="makeAdmin" element={<MakeAdmin />}></Route>
+          <Route path="manageOrders" element={<ManageOrders />}></Route>
+          <Route path="addProducts" element={<AddProduct />}></Route>
+          <Route path="manageProducts" element={<ManageProducts />}></Route>
         </Route>
       </Routes>
       <Footer />
