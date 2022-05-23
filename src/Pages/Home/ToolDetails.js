@@ -35,7 +35,7 @@ const ToolDetails = () => {
         so, do no hesitate to contact us
       </p>
     );
-  } else if (quantity < parseInt(minOrderQuantity)) {
+  } else if (quantity <= parseInt(minOrderQuantity) && quantity !== 0) {
     errorElement = (
       <p className="text-red-500">
         Sorry! You can not order less than minimum order quantity. If you need
@@ -57,8 +57,30 @@ const ToolDetails = () => {
     };
     console.log(order);
 
-    if (quantity > parseInt(minOrderQuantity) && quantity < parseInt(availQuantity)) {
-      
+    if (
+      quantity > parseInt(minOrderQuantity) &&
+      quantity < parseInt(availQuantity)
+    ) {
+      fetch(`http://localhost:5000/order`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(order),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            toast.success(
+              `You have ordered ${quantity} pieces. Please go to My orders to complete the payment`
+            );
+            event.target.reset();
+          }
+        });
+    } else if (quantity > parseInt(availQuantity)) {
+      toast.error("Quantity can not be more than available quantity");
+    } else if (quantity <= parseInt(minOrderQuantity)) {
+      toast.error("Quantity can not be less than minimum order quantity");
     }
   };
 
@@ -161,11 +183,19 @@ const ToolDetails = () => {
                   {errorElement}
                 </span>
               </label>
-              <input
-                className="btn btn-primary w-full max-w-xs block my-4"
-                type="submit"
-                value="Order Now"
-              />
+              <button
+                className="w-full max-w-xs"
+                // disabled={
+                //   quantity < parseInt(minOrderQuantity) ||
+                //   quantity > parseInt(availQuantity)
+                // }
+              >
+                <input
+                  className="btn btn-primary w-full max-w-xs block my-4"
+                  type="submit"
+                  value="Order Now"
+                />
+              </button>
             </form>
           </div>
         </div>
