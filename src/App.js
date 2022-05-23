@@ -16,6 +16,7 @@ import RequireAuth from "./Pages/Login/RequireAuth";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import AddAReview from "./Pages/Dashboard/AddAReview";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         >
           <Route index element={<MyProfile />}></Route>
           <Route path="myOrders" element={<MyOrders />}></Route>
+          <Route path="payment" element={<Payment />}></Route>
           <Route path="addAReview" element={<AddAReview />}></Route>
         </Route>
       </Routes>

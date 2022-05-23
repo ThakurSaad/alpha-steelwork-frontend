@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import DeleteOrderModal from "./DeleteOrderModal";
 
 const MyOrders = () => {
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [deleteOrder, setDeleteOrder] = useState(null);
 
-  const { data: orders, isLoading, refetch } = useQuery(["order", user?.email], () =>
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery(["order", user?.email], () =>
     fetch(`http://localhost:5000/order?customer=${user?.email}`).then((res) =>
       res.json()
     )
@@ -42,7 +48,10 @@ const MyOrders = () => {
                   <td>{o.quantity}</td>
                   <td>
                     <div className="tooltip" data-tip="Complete Payment">
-                      <button className="btn btn-primary btn-sm text-white">
+                      <button
+                        className="btn btn-secondary btn-sm text-white"
+                        onClick={() => navigate(`/dashboard/payment`)}
+                      >
                         pay
                       </button>
                     </div>

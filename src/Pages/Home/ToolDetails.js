@@ -55,7 +55,6 @@ const ToolDetails = () => {
       contact: event.target.contact.value,
       quantity: quantity,
     };
-    console.log(order);
 
     if (
       quantity > parseInt(minOrderQuantity) &&
