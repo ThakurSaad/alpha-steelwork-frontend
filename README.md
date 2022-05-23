@@ -15,6 +15,10 @@
 - react hook form
 - react toastIfy
 
+### New things I realized during this project
+
+- why sent an array in useQuery
+
 ### Inconsistent component name with the Project
 
 - `ToolDetails` page is `Purchase` page
