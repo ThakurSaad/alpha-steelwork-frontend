@@ -9,7 +9,7 @@ const MyOrders = () => {
   const [user] = useAuthState(auth);
   const [deleteOrder, setDeleteOrder] = useState(null);
 
-  const { data: orders, isLoading } = useQuery(["order", user?.email], () =>
+  const { data: orders, isLoading, refetch } = useQuery(["order", user?.email], () =>
     fetch(`http://localhost:5000/order?customer=${user?.email}`).then((res) =>
       res.json()
     )
@@ -68,6 +68,7 @@ const MyOrders = () => {
         <DeleteOrderModal
           deleteOrder={deleteOrder}
           setDeleteOrder={setDeleteOrder}
+          refetch={refetch}
         ></DeleteOrderModal>
       )}
     </section>

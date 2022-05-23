@@ -1,8 +1,21 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const DeleteOrderModal = ({ deleteOrder, setDeleteOrder }) => {
-  const { customerName, productName, quantity } = deleteOrder || "";
-  console.log(deleteOrder);
+const DeleteOrderModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
+  const { _id, customerName, productName, quantity } = deleteOrder || "";
+
+  const handleConfirm = () => {
+    fetch(`http://localhost:5000/order/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Order cancellation successful");
+        }
+        refetch();
+      });
+  };
 
   return (
     <div>
@@ -29,8 +42,12 @@ const DeleteOrderModal = ({ deleteOrder, setDeleteOrder }) => {
             <label
               htmlFor="delete-my-order-modal"
               className="btn hover:bg-red-600 border-0"
+              onClick={handleConfirm}
             >
               Confirm
+            </label>
+            <label htmlFor="delete-my-order-modal" className="btn">
+              Cancel
             </label>
           </div>
         </div>
