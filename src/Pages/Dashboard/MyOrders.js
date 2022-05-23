@@ -27,7 +27,7 @@ const MyOrders = () => {
 
   return (
     <section className="min-h-screen">
-      <h2 className="text-2xl font-semibold my-4">My Orders</h2>
+      <h2 className="text-3xl font-semibold text-primary my-4">My Orders</h2>
       <div className="my-orders-table">
         <div className="overflow-x-auto">
           <table className="table w-full">

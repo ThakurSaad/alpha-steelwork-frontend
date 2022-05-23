@@ -4,8 +4,6 @@ import { Link, Outlet } from "react-router-dom";
 const Dashboard = () => {
   return (
     <section className="min-h-screen">
-      <h2 className="text-5xl font-bold text-center">Dashboard</h2>
-
       <div className="drawer drawer-mobile">
         <input
           id="dashboard-drawer"
@@ -13,6 +11,7 @@ const Dashboard = () => {
           className="drawer-toggle"
         />
         <div className="drawer-content">
+          <h2 className="text-5xl font-bold">Dashboard</h2>
           <Outlet />
         </div>
         <div className="drawer-side">
