@@ -1,21 +1,14 @@
 import React from "react";
 
-const Customer = () => {
+const Customer = ({ review }) => {
+  const { name, description } = review || "";
+
   return (
-    <div className="card max-w-sm bg-base-100 shadow-xl rounded-sm">
-      <div className="avatar">
-        <div className="w-20 rounded">
-          <img
-            src="https://api.lorem.space/image/face?hash=80245"
-            alt="Tailwind-CSS-Avatar-component"
-          />
-        </div>
-      </div>
-      <div className="card-body p-2">
-        <h2 className="card-title">Jonathan</h2>
-        <p>
-          They have very skilled blacksmiths. Extremely glad with the product
-        </p>
+    <div className="card max-w-sm bg-base-100 hover:bg-transparent duration-300 hover:shadow-2xl shadow-xl rounded-sm">
+      <div className="card-body rounded-md p-8">
+        <h2 className="card-title text-2xl">{name}</h2>
+        <hr className="border my-2 border-primary" />
+        <p className="text-xl font-serif">{description}</p>
       </div>
     </div>
   );
