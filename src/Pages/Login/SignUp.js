@@ -11,6 +11,7 @@ import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 import Loading from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const {
@@ -27,13 +28,14 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, uError] = useUpdateProfile(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [token] = useToken(user || gUser);
 
   useEffect(() => {
-    if (user || gUser) {
+    if (token) {
       toast.success("Sign Up complete");
-      navigate(from, { replace: true });
+      // navigate(from, { replace: true });
     }
-  }, [user, gUser, from, navigate]);
+  }, [token, from, navigate]);
   if (loading || updating || gLoading) {
     return <Loading></Loading>;
   }
@@ -48,7 +50,6 @@ const SignUp = () => {
   }
 
   const onSubmit = async (data) => {
-    console.log(data);
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
   };

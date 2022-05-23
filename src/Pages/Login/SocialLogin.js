@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import google from "../../assets/google.png";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
 
 const SocialLogin = ({ children }) => {
@@ -12,13 +13,14 @@ const SocialLogin = ({ children }) => {
   let from = location.state?.from?.pathname || "/";
   let errorElement;
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [token] = useToken(gUser);
 
   useEffect(() => {
-    if (gUser) {
+    if (token) {
       toast.success("Welcome back");
-      navigate(from, { replace: true });
+      // navigate(from, { replace: true });
     }
-  }, [gUser, from, navigate]);
+  }, [token, from, navigate]);
   if (gLoading) {
     return <Loading></Loading>;
   }

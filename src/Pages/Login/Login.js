@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import loginBg from "../../assets/login-bg.jpg";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
 import SocialLogin from "./SocialLogin";
 
@@ -21,13 +22,14 @@ const Login = () => {
   // firebase hooks
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user);
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       toast.success("Welcome back");
-      navigate(from, { replace: true });
+      // navigate(from, { replace: true });
     }
-  }, [user, from, navigate]);
+  }, [token, from, navigate]);
   if (loading) {
     return <Loading></Loading>;
   }
