@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
+import DeleteOrderModal from "./DeleteOrderModal";
 
 const MyOrders = () => {
   const [user] = useAuthState(auth);
+  const [deleteOrder, setDeleteOrder] = useState(null);
 
   const { data: orders, isLoading } = useQuery(["order", user?.email], () =>
     fetch(`http://localhost:5000/order?customer=${user?.email}`).then((res) =>
@@ -47,9 +49,13 @@ const MyOrders = () => {
                   </td>
                   <td>
                     <div className="tooltip" data-tip="Cancel This Order">
-                      <button className="btn btn-primary btn-sm text-white">
-                        cancel
-                      </button>
+                      <label
+                        htmlFor="delete-my-order-modal"
+                        className="btn modal-button btn-primary btn-sm text-white "
+                        onClick={() => setDeleteOrder(o)}
+                      >
+                        Delete
+                      </label>
                     </div>
                   </td>
                 </tr>
@@ -58,6 +64,12 @@ const MyOrders = () => {
           </table>
         </div>
       </div>
+      {deleteOrder && (
+        <DeleteOrderModal
+          deleteOrder={deleteOrder}
+          setDeleteOrder={setDeleteOrder}
+        ></DeleteOrderModal>
+      )}
     </section>
   );
 };
