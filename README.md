@@ -15,6 +15,10 @@
 - react hook form
 - react toastIfy
 
+### Inconsistent component name with the Project
+
+- `ToolDetails` page is `Purchase` page
+
 ### Working hours
 
 - Day 1 : `10:00` hours
