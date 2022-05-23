@@ -18,26 +18,42 @@ const MyOrders = () => {
   }
 
   return (
-    <section>
+    <section className="min-h-screen">
       <h2 className="text-2xl font-semibold my-4">My Orders</h2>
       <div className="my-orders-table">
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
               <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
+                <th>Serial</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Cancellation</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
-              </tr>
+              {orders.map((o, index) => (
+                <tr key={index}>
+                  <th>{index + 1}</th>
+                  <td>{o.productName}</td>
+                  <td>{o.quantity}</td>
+                  <td>
+                    <div className="tooltip" data-tip="Complete Payment">
+                      <button className="btn btn-primary btn-sm text-white">
+                        pay
+                      </button>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="tooltip" data-tip="Cancel This Order">
+                      <button className="btn btn-primary btn-sm text-white">
+                        cancel
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
