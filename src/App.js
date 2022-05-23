@@ -17,6 +17,7 @@ import MyProfile from "./Pages/Dashboard/MyProfile";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import AddAReview from "./Pages/Dashboard/AddAReview";
 import Payment from "./Pages/Dashboard/Payment";
+import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path="myOrders" element={<MyOrders />}></Route>
           <Route path="payment/:payForId" element={<Payment />}></Route>
           <Route path="addAReview" element={<AddAReview />}></Route>
+          <Route path="makeAdmin" element={<MakeAdmin />}></Route>
         </Route>
       </Routes>
       <Footer />

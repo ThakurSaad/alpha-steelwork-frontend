@@ -22,9 +22,9 @@ const MyProfile = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  console.log(currentUser);
+  
   const { education, address, contact, hobby, faceBook, linkedIn } =
-    currentUser;
+    currentUser || "";
 
   const handleSubmit = (event) => {
     event.preventDefault();
