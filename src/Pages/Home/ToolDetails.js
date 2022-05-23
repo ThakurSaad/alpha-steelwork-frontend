@@ -12,7 +12,7 @@ const ToolDetails = () => {
   let errorElement;
 
   const { data: tool } = useQuery(["tool", purchaseId], () =>
-    fetch(`http://localhost:5000/tool/purchase/${purchaseId}`).then((res) =>
+    fetch(`https://infinite-basin-98544.herokuapp.com/tool/purchase/${purchaseId}`).then((res) =>
       res.json()
     )
   );
@@ -60,7 +60,7 @@ const ToolDetails = () => {
       quantity > parseInt(minOrderQuantity) &&
       quantity < parseInt(availQuantity)
     ) {
-      fetch(`http://localhost:5000/order`, {
+      fetch(`https://infinite-basin-98544.herokuapp.com/order`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

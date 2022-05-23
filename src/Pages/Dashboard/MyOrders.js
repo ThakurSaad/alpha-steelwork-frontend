@@ -16,7 +16,7 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["order", user?.email], () =>
-    fetch(`http://localhost:5000/order?customer=${user?.email}`).then((res) =>
+    fetch(`https://infinite-basin-98544.herokuapp.com/order?customer=${user?.email}`).then((res) =>
       res.json()
     )
   );

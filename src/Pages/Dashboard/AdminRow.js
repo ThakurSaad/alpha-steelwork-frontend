@@ -7,7 +7,7 @@ const AdminRow = ({ user, index, refetch }) => {
   const [admin] = useAdmin(user);
 
   const handleAdmin = () => {
-    fetch(`http://localhost:5000/users/admin/${_id}`, {
+    fetch(`https://infinite-basin-98544.herokuapp.com/users/admin/${_id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

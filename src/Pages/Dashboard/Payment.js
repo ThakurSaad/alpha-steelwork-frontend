@@ -10,7 +10,7 @@ const Payment = () => {
   const { data: payForTool, isLoading } = useQuery(
     ["payForTool", payForId],
     () =>
-      fetch(`http://localhost:5000/order/${payForId}`).then((res) => res.json())
+      fetch(`https://infinite-basin-98544.herokuapp.com/order/${payForId}`).then((res) => res.json())
   );
 
   if (isLoading) {
