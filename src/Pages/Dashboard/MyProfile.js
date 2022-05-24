@@ -16,7 +16,7 @@ const MyProfile = () => {
     isLoading,
     refetch,
   } = useQuery(["user", email], () =>
-    fetch(`https://infinite-basin-98544.herokuapp.com/users/${email}`).then((res) => res.json())
+    fetch(`http://localhost:5000/users/${email}`).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -37,7 +37,7 @@ const MyProfile = () => {
       hobby: event.target.hobby.value,
     };
 
-    fetch(`https://infinite-basin-98544.herokuapp.com/users/${email}`, {
+    fetch(`http://localhost:5000/users/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

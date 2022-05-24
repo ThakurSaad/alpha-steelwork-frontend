@@ -5,7 +5,7 @@ const useAdmin = (user) => {
   const [adminLoading, setAdminLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://infinite-basin-98544.herokuapp.com/users/admin/${user?.email}`)
+    fetch(`http://localhost:5000/users/admin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.admin) {
