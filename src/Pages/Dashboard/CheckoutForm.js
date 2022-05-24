@@ -11,7 +11,7 @@ const CheckoutForm = ({ payForTool }) => {
   const [processing, setProcessing] = useState(false);
 
   //   console.log("inside checkoutForm", payForTool);
-  const { shouldPay, customerName, customer } = payForTool || "";
+  const { _id, shouldPay, customerName, customer } = payForTool || "";
 
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {
@@ -70,14 +70,30 @@ const CheckoutForm = ({ payForTool }) => {
       setCardError("");
       setSuccess("Congratulations! Your payment has been successful");
       setTransactionId(paymentIntent.id);
-      setProcessing(false);
       console.log(paymentIntent);
     }
 
     // store payment on database
     const payment = {
-        
+      order: _id,
+      transactionId: paymentIntent.id,
+      customer: customer,
+      customerName: customerName,
     };
+
+    fetch(`http://localhost:5000/orders/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(payment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setProcessing(false);
+      });
   };
 
   return (
