@@ -4,11 +4,13 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 const CheckoutForm = ({ payForTool }) => {
   const stripe = useStripe();
   const elements = useElements();
-  const [cardError, setCardError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
+  const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [transactionId, setTransactionId] = useState("");
 
-  console.log("inside checkoutForm", payForTool);
-  const { shouldPay } = payForTool || "";
+  //   console.log("inside checkoutForm", payForTool);
+  const { shouldPay, customerName, customer } = payForTool || "";
 
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {
@@ -23,7 +25,6 @@ const CheckoutForm = ({ payForTool }) => {
       .then((data) => {
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
-          console.log(clientSecret);
         }
       });
   }, [shouldPay]);
@@ -46,7 +47,31 @@ const CheckoutForm = ({ payForTool }) => {
     });
 
     setCardError(error?.message || "");
-    console.log(paymentMethod);
+    setSuccess("");
+
+    // confirm car payment
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: customerName,
+            email: customer,
+          },
+        },
+      });
+
+    if (intentError?.message) {
+      setCardError(intentError?.message);
+    } else {
+      setCardError("");
+      setSuccess("Congratulations! Your payment has been successful");
+      setTransactionId(paymentIntent.id);
+      console.log(paymentIntent);
+    }
+
+    // store payment on database
+    const payment = {};
   };
 
   return (
@@ -71,7 +96,7 @@ const CheckoutForm = ({ payForTool }) => {
         <button
           className="btn btn-primary btn-sm text-white my-4"
           type="submit"
-          disabled={!stripe}
+          disabled={!stripe || !clientSecret || success}
         >
           Pay
         </button>
@@ -79,6 +104,15 @@ const CheckoutForm = ({ payForTool }) => {
       {cardError && (
         <div>
           <p className="text-red-600">{cardError}</p>
+        </div>
+      )}
+      {success && (
+        <div>
+          <p className="text-success">{success}</p>
+          <p>
+            TransactionId :{" "}
+            <span className="font-semibold text-primary">{transactionId}</span>
+          </p>
         </div>
       )}
     </div>
