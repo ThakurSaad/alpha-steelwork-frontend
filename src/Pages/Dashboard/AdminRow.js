@@ -9,8 +9,16 @@ const AdminRow = ({ user, index, refetch }) => {
   const handleAdmin = () => {
     fetch(`http://localhost:5000/users/admin/${_id}`, {
       method: "PUT",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 403) {
+          toast.error("You are unauthorized to make user admin");
+        }
+        return res.json();
+      })
       .then((data) => {
         if (data.modifiedCount) {
           toast.success("Successfully made user Admin");
