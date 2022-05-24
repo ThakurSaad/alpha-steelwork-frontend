@@ -1,9 +1,14 @@
 import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import ManageProductsRow from "./ManageProductsRow";
 
 const ManageProducts = () => {
-  const { data: tools, isLoading } = useQuery("tools", () =>
+  const {
+    data: tools,
+    isLoading,
+    refetch,
+  } = useQuery("tools", () =>
     fetch("http://localhost:5000/tools").then((res) => res.json())
   );
 
@@ -22,18 +27,20 @@ const ManageProducts = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Product Image</th>
+              <th>Product Name</th>
+              <th>Manage</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+            {tools.map((tool, index) => (
+              <ManageProductsRow
+                key={tool._id}
+                index={index}
+                tool={tool}
+                refetch={refetch}
+              />
+            ))}
           </tbody>
         </table>
       </div>
