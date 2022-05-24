@@ -19,15 +19,14 @@ const Payment = () => {
 
   return (
     <section>
-      <h2 className="text-5xl text-center font-bold text-primary lg:text-left md:ml-24 xl:ml-36">
-        Complete Payment
-      </h2>
+      <h2 className="text-3xl font-semibold text-primary my-4">Complete Payment</h2>
       <div className="order-details">
         <OrderDetails
           key={payForTool._id}
           payForTool={payForTool}
         ></OrderDetails>
       </div>
+      
     </section>
   );
 };

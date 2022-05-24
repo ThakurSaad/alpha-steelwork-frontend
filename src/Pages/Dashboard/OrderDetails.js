@@ -1,8 +1,9 @@
 import React from "react";
 
 const OrderDetails = ({ payForTool }) => {
-  const { address, contact, customer, customerName, productName, quantity } =
+  const { address, contact, customer, customerName, productName, quantity, price } =
     payForTool;
+    console.log(payForTool);
   return (
     <section className="my-8">
       <div className="card max-w-xs md:max-w-lg bg-base-100">
@@ -21,6 +22,7 @@ const OrderDetails = ({ payForTool }) => {
           <hr className="border  w-1/2 my-2 border-primary" />
           <p className="card-title"> Name : {productName}</p>
           <p className="card-title"> Quantity : {quantity}</p>
+          <p className="card-title"> Quantity : {price}</p>
         </div>
       </div>
     </section>

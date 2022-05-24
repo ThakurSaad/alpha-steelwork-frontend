@@ -54,8 +54,9 @@ const ToolDetails = () => {
       address: event.target.address.value,
       contact: event.target.contact.value,
       quantity: quantity,
+      price: price,
     };
-
+    console.log(order);
     if (
       quantity > parseInt(minOrderQuantity) &&
       quantity < parseInt(availQuantity)
