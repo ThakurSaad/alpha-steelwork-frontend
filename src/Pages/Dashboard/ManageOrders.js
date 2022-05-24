@@ -1,6 +1,22 @@
 import React from "react";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
+import ManageOrdersRow from "./ManageOrdersRow";
 
 const ManageOrders = () => {
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("orders", () =>
+    fetch("http://localhost:5000/orders").then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+  // console.log(orders);
+
   return (
     <section>
       <h2 className="text-3xl font-semibold text-primary my-4">
@@ -14,15 +30,19 @@ const ManageOrders = () => {
               <th>Name</th>
               <th>Job</th>
               <th>Favorite Color</th>
+              <th>Status</th>
+              <th>update status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+            {orders?.map((order, index) => (
+              <ManageOrdersRow
+                key={order._id}
+                index={index}
+                order={order}
+                refetch={refetch}
+              />
+            ))}
           </tbody>
         </table>
       </div>
