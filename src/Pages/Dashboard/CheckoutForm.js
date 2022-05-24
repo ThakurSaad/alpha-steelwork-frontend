@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { toast } from "react-toastify";
 
 const CheckoutForm = ({ payForTool }) => {
   const stripe = useStripe();
@@ -70,7 +71,6 @@ const CheckoutForm = ({ payForTool }) => {
       setCardError("");
       setSuccess("Congratulations! Your payment has been successful");
       setTransactionId(paymentIntent.id);
-      console.log(paymentIntent);
     }
 
     // store payment on database
@@ -91,7 +91,9 @@ const CheckoutForm = ({ payForTool }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        toast.success(
+          "Transaction successful. Your order status has been updated. Visit my orders page"
+        );
         setProcessing(false);
       });
   };

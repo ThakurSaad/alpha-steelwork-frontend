@@ -28,7 +28,7 @@ const AdminRow = ({ user, index, refetch }) => {
   };
 
   return (
-    <tr key={index}>
+    <tr className="hover" key={index}>
       <th>{index + 1}</th>
       <td>{email}</td>
       <td>

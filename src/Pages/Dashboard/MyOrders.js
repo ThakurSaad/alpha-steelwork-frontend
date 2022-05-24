@@ -49,7 +49,7 @@ const MyOrders = () => {
                 <th>Serial</th>
                 <th>Product Name</th>
                 <th>Quantity</th>
-                <th className="text-center">Status</th>
+                <th className="text-center">Status/TransactionId</th>
                 <th>Cancellation</th>
               </tr>
             </thead>
@@ -61,7 +61,10 @@ const MyOrders = () => {
                   <td>{o?.quantity}</td>
                   <td className="text-center">
                     {!o.paid && (
-                      <div className="tooltip" data-tip="Complete Payment">
+                      <div
+                        className="tooltip tooltip-secondary"
+                        data-tip="Complete Payment"
+                      >
                         <button
                           className="btn btn-secondary btn-sm text-white"
                           onClick={() =>
@@ -73,17 +76,25 @@ const MyOrders = () => {
                       </div>
                     )}
                     {o.paid && (
-                      <div className="tooltip" data-tip="Transaction Id">
+                      <>
                         <p className="text-primary">Paid</p>
-                        <p className="text-gray-700 font-semibold">
-                          {o.transactionId}
-                        </p>
-                      </div>
+                        <div
+                          className="tooltip tooltip-secondary"
+                          data-tip="Transaction Id"
+                        >
+                          <p className="text-gray-700 font-semibold">
+                            {o.transactionId}
+                          </p>
+                        </div>
+                      </>
                     )}
                   </td>
                   <td>
                     {!o.paid ? (
-                      <div className="tooltip" data-tip="Cancel This Order">
+                      <div
+                        className="tooltip tooltip-primary"
+                        data-tip="Cancel This Order"
+                      >
                         <label
                           htmlFor="delete-my-order-modal"
                           className="btn modal-button btn-primary btn-sm text-white "
@@ -94,7 +105,7 @@ const MyOrders = () => {
                       </div>
                     ) : (
                       <div
-                        className="tooltip"
+                        className="tooltip tooltip-primary"
                         data-tip="Can not cancel order after payment"
                       >
                         <p className="text-gray-700 font-semibold">Disabled</p>
