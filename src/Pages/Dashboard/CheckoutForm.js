@@ -24,6 +24,7 @@ const CheckoutForm = () => {
     });
 
     setCardError(error?.message || "");
+    console.log(paymentMethod);
   };
 
   return (

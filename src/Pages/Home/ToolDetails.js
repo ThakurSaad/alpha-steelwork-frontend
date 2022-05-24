@@ -12,9 +12,9 @@ const ToolDetails = () => {
   let errorElement;
 
   const { data: tool } = useQuery(["tool", purchaseId], () =>
-    fetch(
-      `http://localhost:5000/tool/purchase/${purchaseId}`
-    ).then((res) => res.json())
+    fetch(`http://localhost:5000/tool/purchase/${purchaseId}`).then((res) =>
+      res.json()
+    )
   );
 
   const { displayName, email } = user || "";
@@ -53,8 +53,9 @@ const ToolDetails = () => {
       customerName: displayName,
       address: event.target.address.value,
       contact: event.target.contact.value,
-      quantity: quantity,
-      price: price,
+      quantity: parseInt(quantity),
+      price: parseInt(price),
+      shouldPay: parseInt(price) * parseInt(quantity),
     };
     console.log(order);
     if (

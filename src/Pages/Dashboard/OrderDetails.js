@@ -9,8 +9,9 @@ const OrderDetails = ({ payForTool }) => {
     productName,
     quantity,
     price,
+    shouldPay,
   } = payForTool;
-  
+
   return (
     <section className="my-8">
       <div className="card max-w-xs md:max-w-lg bg-base-100">
@@ -29,11 +30,8 @@ const OrderDetails = ({ payForTool }) => {
           <hr className="border  w-1/2 my-2 border-primary" />
           <p className="card-title"> Name : {productName}</p>
           <p className="card-title"> Quantity : {quantity}</p>
-          <p className="card-title"> Price/per unit : {price}</p>
-          <p className="card-title">
-            {" "}
-            Pay : {parseInt(price) * parseInt(quantity)}
-          </p>
+          <p className="card-title"> Price/per unit : {price}$</p>
+          <p className="card-title"> Please Pay : {shouldPay}$</p>
         </div>
       </div>
     </section>
