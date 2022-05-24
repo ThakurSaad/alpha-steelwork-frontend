@@ -8,6 +8,7 @@ const CheckoutForm = ({ payForTool }) => {
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
   const [transactionId, setTransactionId] = useState("");
+  const [processing, setProcessing] = useState(false);
 
   //   console.log("inside checkoutForm", payForTool);
   const { shouldPay, customerName, customer } = payForTool || "";
@@ -48,6 +49,7 @@ const CheckoutForm = ({ payForTool }) => {
 
     setCardError(error?.message || "");
     setSuccess("");
+    setProcessing(true);
 
     // confirm car payment
     const { paymentIntent, error: intentError } =
@@ -63,15 +65,19 @@ const CheckoutForm = ({ payForTool }) => {
 
     if (intentError?.message) {
       setCardError(intentError?.message);
+      setProcessing(false);
     } else {
       setCardError("");
       setSuccess("Congratulations! Your payment has been successful");
       setTransactionId(paymentIntent.id);
+      setProcessing(false);
       console.log(paymentIntent);
     }
 
     // store payment on database
-    const payment = {};
+    const payment = {
+        
+    };
   };
 
   return (
@@ -101,6 +107,11 @@ const CheckoutForm = ({ payForTool }) => {
           Pay
         </button>
       </form>
+      {processing && (
+        <div className="text-center">
+          <div className="w-16 h-16 border-t-4 border-b-4 border-accent rounded-full animate-spin"></div>
+        </div>
+      )}
       {cardError && (
         <div>
           <p className="text-red-600">{cardError}</p>
