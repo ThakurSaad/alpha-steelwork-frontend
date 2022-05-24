@@ -14,6 +14,7 @@
 - react query
 - react hook form
 - react toastIfy
+- stripe
 
 ### New things I realized during this project
 
