@@ -1,7 +1,9 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import DeleteOrderModal from "./DeleteOrderModal";
@@ -21,7 +23,15 @@ const MyOrders = () => {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
-    }).then((res) => res.json())
+    }).then((res) => {
+      if (res.status === 403 || res.status === 401) {
+        signOut(auth);
+        localStorage.removeItem("accessToken");
+        navigate("/");
+        toast.error("Access Token damaged or expired");
+      }
+      return res.json();
+    })
   );
 
   if (isLoading) {
@@ -44,11 +54,11 @@ const MyOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((o, index) => (
+              {orders?.map((o, index) => (
                 <tr className="hover" key={index}>
                   <th>{index + 1}</th>
-                  <td>{o.productName}</td>
-                  <td>{o.quantity}</td>
+                  <td>{o?.productName}</td>
+                  <td>{o?.quantity}</td>
                   <td>
                     <div className="tooltip" data-tip="Complete Payment">
                       <button
