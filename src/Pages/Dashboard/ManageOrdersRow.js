@@ -31,7 +31,12 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
             <span className="text-success font-semibold">Paid</span>
           </>
         ) : (
-          <span className="text-primary font-semibold">Unpaid</span>
+          <div
+            className="tooltip tooltip-primary"
+            data-tip="Payment is not completed yet"
+          >
+            <span className="text-primary font-semibold">Unpaid</span>
+          </div>
         )}
       </td>
       <td>
