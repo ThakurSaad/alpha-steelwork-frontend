@@ -88,7 +88,7 @@ const ToolDetails = () => {
   return (
     <section className="min-h-screen">
       <div className="tool-details">
-        <div className="card w-72 md:w-5/6 bg-base-100 mx-auto">
+        <div className="card max-w-xs md:w-5/6 bg-base-100 mx-auto">
           <figure>
             <img src={image} alt="tool" />
           </figure>

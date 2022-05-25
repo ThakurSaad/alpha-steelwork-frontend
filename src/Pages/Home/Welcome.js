@@ -12,11 +12,11 @@ const Welcome = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div>
-            <h1 className="text-4xl my-12">
+            <h1 className="text-4xl mb-6">
               Welcome to <br />
               <span className="text-primary">Alpha Steelwork</span>
             </h1>
-            <hr className="border-2 my-2 border-primary" />
+            <hr className="border-2 mb-2 border-primary" />
             <p className="py-4">
               A Great Place to Work-Certified organization, we are spread across
               five continents with an employee base of over 65,000.
