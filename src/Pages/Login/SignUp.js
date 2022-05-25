@@ -66,7 +66,7 @@ const SignUp = () => {
       }}
       className="min-h-screen flex justify-center items-center"
     >
-      <div className="card lg:w-96 bg-base-100 shadow-xl">
+      <div className="card w-80 md:w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="text-5xl font-bold text-center text-primary">
             Sign Up
