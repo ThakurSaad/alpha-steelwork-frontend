@@ -10,6 +10,9 @@ const ManageProductsModal = ({ tool, refetch }) => {
   const handleConfirm = () => {
     fetch(`https://infinite-basin-98544.herokuapp.com/tool/${_id}`, {
       method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {

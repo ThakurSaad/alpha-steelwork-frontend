@@ -7,6 +7,9 @@ const DeleteOrderModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
   const handleConfirm = () => {
     fetch(`https://infinite-basin-98544.herokuapp.com/order/${_id}`, {
       method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {

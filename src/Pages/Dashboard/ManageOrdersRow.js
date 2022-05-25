@@ -8,6 +8,9 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
   const handlePending = () => {
     fetch(`https://infinite-basin-98544.herokuapp.com/order/${_id}`, {
       method: "PUT",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {

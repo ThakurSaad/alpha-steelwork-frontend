@@ -10,7 +10,11 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://infinite-basin-98544.herokuapp.com/users").then((res) => res.json())
+    fetch("https://infinite-basin-98544.herokuapp.com/users", {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
 
   if (isLoading) {

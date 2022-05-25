@@ -12,9 +12,11 @@ const ToolDetails = () => {
   let errorElement;
 
   const { data: tool } = useQuery(["tool", purchaseId], () =>
-    fetch(
-      `https://infinite-basin-98544.herokuapp.com/tool/purchase/${purchaseId}`
-    ).then((res) => res.json())
+    fetch(`https://infinite-basin-98544.herokuapp.com/tool/purchase/${purchaseId}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
 
   const { displayName, email } = user || "";
@@ -27,7 +29,11 @@ const ToolDetails = () => {
     availQuantity,
     price,
   } = tool || "";
-  console.log(typeof(quantity), parseInt(minOrderQuantity), parseInt(availQuantity));
+  console.log(
+    typeof quantity,
+    parseInt(minOrderQuantity),
+    parseInt(availQuantity)
+  );
 
   if (quantity > parseInt(availQuantity)) {
     errorElement = (
@@ -67,6 +73,7 @@ const ToolDetails = () => {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify(order),
       })
@@ -174,6 +181,7 @@ const ToolDetails = () => {
                 name="quantity"
                 placeholder="Order Quantity"
                 className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
+                defaultValue={minOrderQuantity}
                 required
                 onChange={(e) => {
                   setQuantity(e.target.value);
@@ -188,8 +196,8 @@ const ToolDetails = () => {
               <button
                 className="w-full max-w-xs"
                 disabled={
-                  (parseInt(quantity) < parseInt(minOrderQuantity) ||
-                  parseInt(quantity) > parseInt(availQuantity))
+                  parseInt(quantity) < parseInt(minOrderQuantity) ||
+                  parseInt(quantity) > parseInt(availQuantity)
                 }
               >
                 <input

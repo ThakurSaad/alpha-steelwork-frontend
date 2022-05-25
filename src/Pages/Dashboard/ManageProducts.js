@@ -9,13 +9,17 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch("https://infinite-basin-98544.herokuapp.com/tools").then((res) => res.json())
+    fetch("https://infinite-basin-98544.herokuapp.com/tools", {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
 
   if (isLoading) {
     return <Loading></Loading>;
   }
-  
+
   return (
     <section>
       <h2 className="text-3xl font-semibold text-primary my-4">
