@@ -2,7 +2,7 @@ import React from "react";
 
 const Projects = () => {
   return (
-    <section className="my-20">
+    <section className="my-20 mx-10">
       <h4 className="text-center text-3xl my-12 font-semibold">Projects</h4>
       <div className="card max-w-sm bg-base-100 mx-auto hover:bg-amber-100 hover:shadow-xl duration-200 hover:scale-110">
         <div className="p-6">
