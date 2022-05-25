@@ -15,8 +15,7 @@ const ManageProducts = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  console.log(tools);
-
+  
   return (
     <section>
       <h2 className="text-3xl font-semibold text-primary my-4">
