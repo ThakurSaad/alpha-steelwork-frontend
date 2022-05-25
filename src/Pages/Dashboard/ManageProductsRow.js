@@ -25,12 +25,15 @@ const ManageProductsRow = ({ tool, index, refetch }) => {
             <label
               htmlFor="delete-product-modal"
               className="btn modal-button btn-sm btn-warning"
-              onClick={() => setModalTool(tool)}
+              onClick={() => {
+                refetch();
+                setModalTool(tool);
+              }}
             >
               Delete
             </label>
           </div>
-          {modalTool && <ManageProductsModal />}
+          {modalTool && <ManageProductsModal tool={tool} refetch={refetch} />}
         </td>
       </tr>
     </>

@@ -22,7 +22,7 @@ const Blogs = () => {
           load 10 or 20 or so items, after that another 10 or 20 and repeat.
         </p>
       </div>
-      <div class="divider lg:mt-10 lg:mb-20"></div>
+      <div className="divider lg:mt-10 lg:mb-20"></div>
       <div className="q-and-a">
         <h2 className="text-3xl font-semibold text-primary my-4">
           What are the different ways to manage a state in a React application?
@@ -51,7 +51,7 @@ const Blogs = () => {
           to manage this.
         </p>
       </div>
-      <div class="divider lg:mt-10 lg:mb-20"></div>
+      <div className="divider lg:mt-10 lg:mb-20"></div>
       <div className="q-and-a">
         <h2 className="text-3xl font-semibold text-primary my-4">
           How does prototypical inheritance work?
@@ -68,7 +68,7 @@ const Blogs = () => {
           <kbd className="bg-gray-200 rounded px-2">object.prototype</kbd>.
         </p>
       </div>
-      <div class="divider lg:mt-10 lg:mb-20"></div>
+      <div className="divider lg:mt-10 lg:mb-20"></div>
       <div className="q-and-a">
         <h2 className="text-3xl font-semibold text-primary my-4">
           {" "}
@@ -100,7 +100,7 @@ const Blogs = () => {
           unnecessary rerendering.
         </p>
       </div>
-      <div class="divider lg:mt-10 lg:mb-20"></div>
+      <div className="divider lg:mt-10 lg:mb-20"></div>
       <div className="q-and-a">
         <h2 className="text-3xl font-semibold text-primary my-4">
           You have an array of products. Each product has a name, price,
@@ -108,7 +108,7 @@ const Blogs = () => {
           name?
         </h2>
       </div>
-      <div class="divider lg:mt-10 lg:mb-20"></div>
+      <div className="divider lg:mt-10 lg:mb-20"></div>
       <div className="q-and-a">
         <h2 className="text-3xl font-semibold text-primary my-4">
           What is a unit test? Why should developers write unit tests?
@@ -124,7 +124,7 @@ const Blogs = () => {
           testing is the first level of testing done before integration.
         </p>
       </div>
-      <div class="divider lg:mt-10 lg:mb-20"></div>
+      <div className="divider lg:mt-10 lg:mb-20"></div>
     </section>
   );
 };
