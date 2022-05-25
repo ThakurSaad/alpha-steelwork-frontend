@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [admin] = useAdmin(user);
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen mx-4">
       <div className="drawer drawer-mobile">
         <input
           id="dashboard-drawer"

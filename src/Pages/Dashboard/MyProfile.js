@@ -16,13 +16,15 @@ const MyProfile = () => {
     isLoading,
     refetch,
   } = useQuery(["user", email], () =>
-    fetch(`https://infinite-basin-98544.herokuapp.com/users/${email}`).then((res) => res.json())
+    fetch(`https://infinite-basin-98544.herokuapp.com/users/${email}`).then(
+      (res) => res.json()
+    )
   );
 
   if (isLoading) {
     return <Loading></Loading>;
   }
-  
+
   const { education, address, contact, hobby, faceBook, linkedIn } =
     currentUser || "";
 
@@ -59,9 +61,9 @@ const MyProfile = () => {
   return (
     <section>
       <h2 className="text-3xl font-semibold text-primary my-4">My Profile</h2>
-      <div className="profile m-4">
+      <div className="profile px-4">
         <div className="current-profile mt-6 mb-20">
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card max-w-sm bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -73,36 +75,37 @@ const MyProfile = () => {
                 </div>
               </div>
             </figure>
-            <div className="p-8">
+            <div className="pl-4 py-8">
               <h2 className="card-title text-2xl uppercase">{displayName}</h2>
-              <hr className="border-2 my-6 border-accent" />
+              <hr className="border-2 my-6 border-accent mr-4" />
               <p className="my-3">
-                <span className="font-semibold">Email :</span> {email}
+                <span className="font-semibold">Email :</span>
               </p>
+              <p>{email}</p>
               <p className="my-3">
                 <span className="font-semibold">Education :</span>{" "}
-                {education ? education : "Not Provided"}
               </p>
+              <p>{education ? education : "Not Provided"}</p>
               <p className="my-3">
                 <span className="font-semibold">Address :</span>{" "}
-                {address ? address : "Not Provided"}
               </p>
+              <p>{address ? address : "Not Provided"}</p>
               <p className="my-3">
                 <span className="font-semibold">Contact :</span>{" "}
-                {contact ? contact : "Not Provided"}
               </p>
+              <p>{contact ? contact : "Not Provided"}</p>
               <p className="my-3">
                 <span className="font-semibold">Hobby :</span>{" "}
-                {hobby ? hobby : "Not Provided"}
               </p>
+              <p>{hobby ? hobby : "Not Provided"}</p>
               <p className="my-3">
                 <span className="font-semibold">FaceBook :</span>{" "}
-                {faceBook ? faceBook : "Not Provided"}
               </p>
+              <p>{faceBook ? faceBook : "Not Provided"}</p>
               <p className="my-3">
                 <span className="font-semibold">LinkedIn :</span>{" "}
-                {linkedIn ? linkedIn : "Not Provided"}
               </p>
+              <p>{linkedIn ? linkedIn : "Not Provided"}</p>
             </div>
           </div>
         </div>
