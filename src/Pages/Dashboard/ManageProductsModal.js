@@ -1,12 +1,30 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const ManageProductsModal = ({ tool, refetch }) => {
   const [user] = useAuthState(auth);
-  const { name, image } = tool || "";
-  
-  const handleConfirm = () => {};
+  const { _id, name, image } = tool || "";
+
+  const handleConfirm = () => {
+    fetch(`http://localhost:5000/tool/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Product deleted successfully");
+          refetch();
+        }
+        console.log(data);
+      });
+  };
+
+  const handleCancel = () => {
+    toast("Please reload the page to select and delete other tool");
+    refetch();
+  };
 
   return (
     <div className="max-w-sm">
@@ -21,6 +39,7 @@ const ManageProductsModal = ({ tool, refetch }) => {
           <div className="my-6">
             <img src={image} className="w-28" alt={name} />
             <p className="font-bold">{name}</p>
+            <p className="font-semibold text-gray-400">{_id}</p>
             <p className="font-semibold">
               Are you sure you want to delete this product?
             </p>
@@ -37,7 +56,11 @@ const ManageProductsModal = ({ tool, refetch }) => {
             >
               Confirm
             </label>
-            <label htmlFor="delete-product-modal" className="btn">
+            <label
+              htmlFor="delete-product-modal"
+              className="btn"
+              onClick={handleCancel}
+            >
               Cancel
             </label>
           </div>
