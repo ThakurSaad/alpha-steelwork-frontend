@@ -36,7 +36,7 @@ const Payment = () => {
         ></OrderDetails>
       </div>
       <div className="payment-stripe py-12">
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card max-w-sm bg-base-100 shadow-xl">
           <div className="card-body">
             <Elements stripe={stripePromise}>
               <CheckoutForm payForTool={payForTool} />

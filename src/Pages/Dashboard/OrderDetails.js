@@ -14,8 +14,8 @@ const OrderDetails = ({ payForTool }) => {
 
   return (
     <section className="my-8">
-      <div className="card max-w-xs md:max-w-lg bg-base-100">
-        <div className="card-body">
+      <div className="card max-w-sm md:max-w-lg bg-base-100">
+        <div className="">
           <h2 className="text-3xl">Order Details</h2>
           <hr className="border-2 my-2 border-accent" />
           <h5 className="font-semibold">Customer Details</h5>
