@@ -31,7 +31,7 @@ const Tool = ({ tool }) => {
         <div className="card-actions">
           <button
             onClick={() => handlePurchase(_id)}
-            className="btn btn-primary"
+            className="btn btn-primary text-white"
           >
             Purchase
           </button>

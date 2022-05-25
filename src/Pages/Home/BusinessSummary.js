@@ -22,7 +22,7 @@ const BusinessSummary = () => {
       <h2 className="text-5xl font-semibold text-center pb-20 pt-32">
         We have acquired trust all over the world
       </h2>
-      <div className="grid grid-cols-1 justify-items-center lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-y-12 justify-items-center lg:grid-cols-4">
         <div className="text-center">
           <FontAwesomeIcon icon={faFlag} size="4x" className="" />
           <p className="font-bold text-5xl my-5">40+ </p>
@@ -44,9 +44,9 @@ const BusinessSummary = () => {
           <h5 className="font-semibold text-3xl">Tools</h5>
         </div>
       </div>
-      <div className="max-w-screen-sm w-full lg:w-2/4 flex justify-evenly items-center mx-auto mt-12">
+      <div className="max-w-screen-sm w-full lg:w-2/4 flex justify-evenly items-center mx-auto mt-12 px-2">
         <h2 className="font-semibold text-2xl">Connect with us Now</h2>
-        <button className="btn btn-lg btn-primary">
+        <button className="btn btn-lg btn-primary text-white">
           Contact Us
           <FontAwesomeIcon
             icon={faArrowAltCircleRight}
