@@ -64,9 +64,30 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
-          <Route path="manageOrders" element={<ManageOrders />}></Route>
-          <Route path="addProducts" element={<AddProduct />}></Route>
-          <Route path="manageProducts" element={<ManageProducts />}></Route>
+          <Route
+            path="manageOrders"
+            element={
+              <RequireAdmin>
+                <ManageOrders />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addProducts"
+            element={
+              <RequireAdmin>
+                <AddProduct />
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageProducts"
+            element={
+              <RequireAdmin>
+                <ManageProducts />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

@@ -12,9 +12,9 @@ const ToolDetails = () => {
   let errorElement;
 
   const { data: tool } = useQuery(["tool", purchaseId], () =>
-    fetch(`https://infinite-basin-98544.herokuapp.com/tool/purchase/${purchaseId}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://infinite-basin-98544.herokuapp.com/tool/purchase/${purchaseId}`
+    ).then((res) => res.json())
   );
 
   const { displayName, email } = user || "";
@@ -27,6 +27,7 @@ const ToolDetails = () => {
     availQuantity,
     price,
   } = tool || "";
+  console.log(typeof(quantity), parseInt(minOrderQuantity), parseInt(availQuantity));
 
   if (quantity > parseInt(availQuantity)) {
     errorElement = (
@@ -60,7 +61,7 @@ const ToolDetails = () => {
     console.log(order);
     if (
       quantity > parseInt(minOrderQuantity) &&
-      quantity < parseInt(availQuantity)
+      quantity <= parseInt(availQuantity)
     ) {
       fetch(`https://infinite-basin-98544.herokuapp.com/order`, {
         method: "POST",
@@ -186,10 +187,10 @@ const ToolDetails = () => {
               </label>
               <button
                 className="w-full max-w-xs"
-                // disabled={
-                //   quantity < parseInt(minOrderQuantity) ||
-                //   quantity > parseInt(availQuantity)
-                // }
+                disabled={
+                  (parseInt(quantity) < parseInt(minOrderQuantity) ||
+                  parseInt(quantity) > parseInt(availQuantity))
+                }
               >
                 <input
                   className="btn btn-primary w-full max-w-xs block my-4"
