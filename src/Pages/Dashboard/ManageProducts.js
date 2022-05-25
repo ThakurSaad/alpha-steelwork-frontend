@@ -9,7 +9,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch("http://localhost:5000/tools").then((res) => res.json())
+    fetch("https://infinite-basin-98544.herokuapp.com/tools").then((res) => res.json())
   );
 
   if (isLoading) {

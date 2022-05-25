@@ -6,7 +6,7 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
     order || "";
 
   const handlePending = () => {
-    fetch(`http://localhost:5000/order/${_id}`, {
+    fetch(`https://infinite-basin-98544.herokuapp.com/order/${_id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

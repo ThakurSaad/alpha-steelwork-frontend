@@ -9,7 +9,7 @@ const ManageOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch("http://localhost:5000/orders").then((res) => res.json())
+    fetch("https://infinite-basin-98544.herokuapp.com/orders").then((res) => res.json())
   );
 
   if (isLoading) {
