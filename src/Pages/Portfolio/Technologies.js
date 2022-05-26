@@ -26,7 +26,7 @@ const Technologies = () => {
         <Technology logo={authentication} name="authentication" />
         <Technology logo={devtool} name="devtool" />
         <Technology logo={debug} name="debug" />
-        <Technology logo={query} name="react query" />
+        <Technology animation="animate-spin" logo={query} name="react query" />
         <Technology logo={github} name="github" />
         <Technology logo={netlify} name="netlify" />
         <Technology logo={figma} name="figma" />

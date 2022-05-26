@@ -16,7 +16,7 @@ const Skills = () => {
         <Skill logo={html} name="html" />
         <Skill logo={css} name="css" />
         <Skill logo={js} name="javascript" />
-        <Skill logo={reactSvg} name="react" />
+        <Skill animation="animate-spin" logo={reactSvg} name="react" />
         <Skill logo={node} name="node" />
         <Skill logo={mongodb} name="mongodb" />
         <Skill logo={responsive} name="Responsive Design" />
