@@ -4,7 +4,7 @@ const Stats = () => {
   return (
     <div>
       <div className="text-center hidden lg:animate-bounce md:block pt-24 pb-16">
-        <div className="stats stats-vertical lg:stats-horizontal shadow bg-transparent items-end hover:bg-white hover:shadow-2xl duration-300 py-8">
+        <div className="stats stats-vertical lg:stats-horizontal bg-transparent items-end hover:bg-white hover:shadow-2xl duration-300 py-8">
           <div className="stat">
             <div className="stat-figure text-primary">
               <svg
