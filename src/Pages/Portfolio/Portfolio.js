@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import ProfileDetails from "./ProfileDetails";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import Technologies from "./Technologies";
 
 const Portfolio = () => {
   return (
@@ -11,6 +12,7 @@ const Portfolio = () => {
       <Profile />
       <ProfileDetails />
       <Skills />
+      <Technologies />
       <Projects />
     </section>
   );
