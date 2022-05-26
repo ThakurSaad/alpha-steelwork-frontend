@@ -6,7 +6,7 @@ const ContactUs = () => {
       <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div class="text-center lg:text-left">
-            <h1 class="text-5xl font-bold">Login now!</h1>
+            <h1 class="text-5xl font-bold">Contact Us</h1>
             <p class="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
@@ -17,21 +17,21 @@ const ContactUs = () => {
             <div class="card-body">
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text">Email</span>
+                  <span class="label-text">Your Name</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="email"
+                  placeholder="name"
                   class="input input-bordered"
                 />
               </div>
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text">Password</span>
+                  <span class="label-text">The reason you are contacting</span>
                 </label>
-                <input
+                <textarea
                   type="text"
-                  placeholder="password"
+                  placeholder="Reason"
                   class="input input-bordered"
                 />
                 <label class="label">
@@ -41,7 +41,7 @@ const ContactUs = () => {
                 </label>
               </div>
               <div class="form-control mt-6">
-                <button class="btn btn-primary">Login</button>
+                <button class="btn btn-primary">contact us</button>
               </div>
             </div>
           </div>

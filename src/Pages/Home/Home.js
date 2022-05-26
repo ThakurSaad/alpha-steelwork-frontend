@@ -5,6 +5,7 @@ import Tools from "./Tools";
 import Review from "./Review";
 import Welcome from "./Welcome";
 import Benefits from "./Benefits";
+import ContactUs from "./ContactUs";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Tools/>
       <Review/>
       <BusinessSummary />
+      <ContactUs />
     </div>
   );
 };
