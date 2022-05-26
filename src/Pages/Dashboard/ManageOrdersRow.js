@@ -23,9 +23,6 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
         refetch();
       });
   };
-  if (adminDeleteOrder) {
-    // console.log("state", adminDeleteOrder);
-  }
 
   return (
     <tr className="hover">
@@ -53,7 +50,7 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
             {!shipment ? (
               <div
                 className="tooltip tooltip-secondary"
-                data-tip="ready for shipment"
+                data-tip="Place for shipment"
               >
                 <button
                   className="btn btn-sm btn-secondary text-white"
@@ -90,7 +87,10 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
           </>
         )}
         {adminDeleteOrder && (
-          <AdminDeleteOrderModal adminDeleteOrder={adminDeleteOrder} />
+          <AdminDeleteOrderModal
+            adminDeleteOrder={adminDeleteOrder}
+            refetch={refetch}
+          />
         )}
       </td>
     </tr>

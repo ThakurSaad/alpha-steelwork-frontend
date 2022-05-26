@@ -1,16 +1,31 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
-const AdminDeleteOrderModal = ({ adminDeleteOrder }) => {
+const AdminDeleteOrderModal = ({ adminDeleteOrder, refetch }) => {
   const [user] = useAuthState(auth);
-  const { customerName, productName, quantity } = adminDeleteOrder || "";
+  const { _id, customerName, productName, quantity } = adminDeleteOrder || "";
+
+  const handleConfirm = () => {
+    fetch(`http://localhost:5000/order/${_id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Order cancellation successful");
+        }
+        refetch();
+      });
+  };
 
   return (
     <div>
-      {/* <!-- The button to open modal --> */}
-
-      {/* <!-- Put this part before </body> tag --> */}
       <input
         type="checkbox"
         id="admin-delete-single-order"
@@ -32,6 +47,13 @@ const AdminDeleteOrderModal = ({ adminDeleteOrder }) => {
           <p>Are You sure you want to delete?</p>
           <p>Once deleted, the information will be erased from our database.</p>
           <div className="modal-action">
+            <label
+              htmlFor="admin-delete-single-order"
+              className="btn hover:bg-red-600 border-0"
+              onClick={handleConfirm}
+            >
+              Confirm
+            </label>
             <label
               htmlFor="admin-delete-single-order"
               className="btn"
