@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import buisnessBg from "../../assets/buisness-bg.jpg";
+import Stats from "./Stats";
 
 const BusinessSummary = () => {
   return (
@@ -35,7 +36,7 @@ const BusinessSummary = () => {
         </div>
         <div className="text-center">
           <FontAwesomeIcon icon={faMoneyBillTrendUp} size="4x" className="" />
-          <p className="font-bold text-5xl my-5">50M+ </p>
+          <p className="font-bold text-5xl my-5">350M+ </p>
           <h5 className="font-semibold text-3xl">Revenue/y</h5>
         </div>
         <div className="text-center">
@@ -44,6 +45,8 @@ const BusinessSummary = () => {
           <h5 className="font-semibold text-3xl">Tools</h5>
         </div>
       </div>
+      <Stats />
+
       <div className="max-w-screen-sm w-full lg:w-2/4 flex justify-evenly items-center mx-auto mt-12 px-2">
         <h2 className="font-semibold text-2xl">Connect with us Now</h2>
         <button className="btn btn-lg btn-primary text-white">
