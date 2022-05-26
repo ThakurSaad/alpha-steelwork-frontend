@@ -22,7 +22,7 @@ const Welcome = () => {
               five continents with an employee base of over 65,000.
             </p>
           </div>
-          <div className="col-span-3 grid gap-y-10 grid-cols-1 md:grid-cols-3 bg-white py-14">
+          <div className="col-span-3 grid gap-y-10 grid-cols-1 md:grid-cols-3 bg-white hover:shadow-2xl duration-300 lg:animate-bounce py-14">
             <div className="text-center md:flex md:justify-around">
               <div>
                 <FontAwesomeIcon
