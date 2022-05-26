@@ -41,12 +41,12 @@ const Banner = () => {
           </div>
           <div className="text-center">
             <button
-              className="btn btn-lg btn-primary rounded-sm text-white"
+              className="btn btn-lg btn-primary rounded-sm text-white animate-pulse"
               onClick={() => navigate("/allTool")}
             >
               Our Products
             </button>
-            <button className="btn btn-lg btn-primary rounded-sm ml-4 text-white"
+            <button className="btn btn-lg btn-primary rounded-sm ml-4 text-white animate-pulse"
             onClick={() => navigate("/blogs")}
             >
               Read more
