@@ -48,7 +48,7 @@ const ContactUs = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary text-white">
+                <button className="btn btn-primary text-white animate-pulse">
                   Send Email
                 </button>
               </div>

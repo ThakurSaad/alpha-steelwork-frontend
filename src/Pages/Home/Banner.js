@@ -20,7 +20,7 @@ const Banner = () => {
             className="min-h-screen block md:hidden max-w-full"
           />
         </div>
-        <div className="absolute top-52 right-0 left-0">
+        <div className="absolute top-52 right-0 left-0 animate-pulse">
           <div>
             <h1
               className="md:text-7xl text-4xl text-white font-bold text-center my-4"
