@@ -15,7 +15,7 @@ const CheckoutForm = ({ payForTool }) => {
   const { _id, shouldPay, customerName, customer } = payForTool || "";
 
   useEffect(() => {
-    fetch("https://infinite-basin-98544.herokuapp.com/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,7 +81,7 @@ const CheckoutForm = ({ payForTool }) => {
       customerName: customerName,
     };
 
-    fetch(`https://infinite-basin-98544.herokuapp.com/orders/${_id}`, {
+    fetch(`http://localhost:5000/orders/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

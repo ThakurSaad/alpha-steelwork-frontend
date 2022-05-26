@@ -4,6 +4,10 @@ import ManageProductsModal from "./ManageProductsModal";
 const ManageProductsRow = ({ tool, index, refetch }) => {
   const [modalTool, setModalTool] = useState(null);
   const { image, name } = tool || "";
+  
+  // if (modalTool) {
+  //   // console.log("'modalToll' state", modalTool);
+  // }
 
   return (
     <>
@@ -25,15 +29,14 @@ const ManageProductsRow = ({ tool, index, refetch }) => {
             <label
               htmlFor="delete-product-modal"
               className="btn modal-button btn-sm btn-warning"
-              onClick={() => {
-                refetch();
-                setModalTool(tool);
-              }}
+              onClick={() => setModalTool(tool)}
             >
               Delete
             </label>
           </div>
-          {modalTool && <ManageProductsModal tool={tool} refetch={refetch} />}
+          {modalTool && (
+            <ManageProductsModal modalTool={modalTool} refetch={refetch} />
+          )}
         </td>
       </tr>
     </>

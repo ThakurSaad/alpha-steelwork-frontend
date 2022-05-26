@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
+import AdminDeleteOrderModal from "./AdminDeleteOrderModal";
 
 const ManageOrdersRow = ({ order, index, refetch }) => {
+  const [adminDeleteOrder, setAdminDeleteOrder] = useState(null);
   const { _id, customer, customerName, productName, paid, shipment } =
     order || "";
 
   const handlePending = () => {
-    fetch(`https://infinite-basin-98544.herokuapp.com/order/${_id}`, {
+    fetch(`http://localhost:5000/order/${_id}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -21,6 +23,9 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
         refetch();
       });
   };
+  if (adminDeleteOrder) {
+    // console.log("state", adminDeleteOrder);
+  }
 
   return (
     <tr className="hover">
@@ -74,9 +79,18 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
               className="tooltip tooltip-warning"
               data-tip="Delete customer's order"
             >
-              <button className="btn btn-sm btn-warning">Cancel</button>
+              <label
+                htmlFor="admin-delete-single-order"
+                className="btn btn-sm btn-warning modal-button"
+                onClick={() => setAdminDeleteOrder(order)}
+              >
+                cancel
+              </label>
             </div>
           </>
+        )}
+        {adminDeleteOrder && (
+          <AdminDeleteOrderModal adminDeleteOrder={adminDeleteOrder} />
         )}
       </td>
     </tr>

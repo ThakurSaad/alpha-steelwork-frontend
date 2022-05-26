@@ -12,7 +12,7 @@ const ToolDetails = () => {
   let errorElement;
 
   const { data: tool } = useQuery(["tool", purchaseId], () =>
-    fetch(`https://infinite-basin-98544.herokuapp.com/tool/purchase/${purchaseId}`, {
+    fetch(`http://localhost:5000/tool/purchase/${purchaseId}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
@@ -29,11 +29,6 @@ const ToolDetails = () => {
     availQuantity,
     price,
   } = tool || "";
-  console.log(
-    typeof quantity,
-    parseInt(minOrderQuantity),
-    parseInt(availQuantity)
-  );
 
   if (quantity > parseInt(availQuantity)) {
     errorElement = (
@@ -42,7 +37,7 @@ const ToolDetails = () => {
         so, do no hesitate to contact us
       </p>
     );
-  } else if (quantity <= parseInt(minOrderQuantity) && quantity !== 0) {
+  } else if (quantity < parseInt(minOrderQuantity) && quantity !== 0) {
     errorElement = (
       <p className="text-red-500">
         Sorry! You can not order less than minimum order quantity. If you need
@@ -69,7 +64,7 @@ const ToolDetails = () => {
       quantity > parseInt(minOrderQuantity) &&
       quantity <= parseInt(availQuantity)
     ) {
-      fetch(`https://infinite-basin-98544.herokuapp.com/order`, {
+      fetch(`http://localhost:5000/order`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -193,19 +188,15 @@ const ToolDetails = () => {
                   {errorElement}
                 </span>
               </label>
-              <button
-                className="w-full max-w-xs"
+              <input
+                className="btn btn-primary w-full max-w-xs block my-4"
+                type="submit"
+                value="Order Now"
                 disabled={
-                  parseInt(quantity) < parseInt(minOrderQuantity) ||
-                  parseInt(quantity) > parseInt(availQuantity)
+                  quantity < parseInt(minOrderQuantity) ||
+                  quantity > parseInt(availQuantity)
                 }
-              >
-                <input
-                  className="btn btn-primary w-full max-w-xs block my-4"
-                  type="submit"
-                  value="Order Now"
-                />
-              </button>
+              />
             </form>
           </div>
         </div>

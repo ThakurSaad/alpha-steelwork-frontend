@@ -6,7 +6,7 @@ import Customer from "./Customer";
 
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch("https://infinite-basin-98544.herokuapp.com/reviews").then((res) => res.json())
+    fetch("http://localhost:5000/reviews").then((res) => res.json())
   );
 
   if (isLoading) {

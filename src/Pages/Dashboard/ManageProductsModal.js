@@ -3,12 +3,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
-const ManageProductsModal = ({ tool, refetch }) => {
+const ManageProductsModal = ({ modalTool, refetch }) => {
   const [user] = useAuthState(auth);
-  const { _id, name, image } = tool || "";
-
+  const { _id, name, image } = modalTool || "";
+  // console.log("Modal", modalTool);
   const handleConfirm = () => {
-    fetch(`https://infinite-basin-98544.herokuapp.com/tool/${_id}`, {
+    fetch(`http://localhost:5000/tool/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -26,7 +26,7 @@ const ManageProductsModal = ({ tool, refetch }) => {
 
   const handleCancel = () => {
     toast("Please reload the page to select and delete other tool");
-    refetch();
+    window.location.reload();
   };
 
   return (
