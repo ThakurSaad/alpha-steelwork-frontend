@@ -6,7 +6,7 @@ import allToolBg from "../../assets/all-tool-bg.jpg";
 
 const AllTool = () => {
   const { data: tools, isLoading } = useQuery("tools", () =>
-    fetch("http://localhost:5000/tools").then((res) =>
+    fetch("https://infinite-basin-98544.herokuapp.com/tools").then((res) =>
       res.json()
     )
   );

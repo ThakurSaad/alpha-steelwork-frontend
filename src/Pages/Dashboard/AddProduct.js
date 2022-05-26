@@ -13,7 +13,7 @@ const AddProduct = () => {
       price: event.target.price.value,
     };
 
-    fetch("http://localhost:5000/tools", {
+    fetch("https://infinite-basin-98544.herokuapp.com/tools", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -8,7 +8,7 @@ const ManageProductsModal = ({ modalTool, refetch }) => {
   const { _id, name, image } = modalTool || "";
   // console.log("Modal", modalTool);
   const handleConfirm = () => {
-    fetch(`http://localhost:5000/tool/${_id}`, {
+    fetch(`https://infinite-basin-98544.herokuapp.com/tool/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

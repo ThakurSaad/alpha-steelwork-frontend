@@ -17,7 +17,7 @@ const Payment = () => {
   const { data: payForTool, isLoading } = useQuery(
     ["payForTool", payForId],
     () =>
-      fetch(`http://localhost:5000/order/${payForId}`, {
+      fetch(`https://infinite-basin-98544.herokuapp.com/order/${payForId}`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

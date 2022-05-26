@@ -9,7 +9,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch("http://localhost:5000/tools", {
+    fetch("https://infinite-basin-98544.herokuapp.com/tools", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

@@ -14,7 +14,7 @@ const AddAReview = () => {
       description: event.target.description.value,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://infinite-basin-98544.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
