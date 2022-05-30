@@ -1,6 +1,6 @@
 # Alpha Steelwork
 
-[Open portal and transfer to Alpha Steelworks world](https://alpha-steelwork.web.app/)
+[Open portal to Alpha Steelworks world](https://alpha-steelwork.web.app/)
 
 ### Features of this application
 
