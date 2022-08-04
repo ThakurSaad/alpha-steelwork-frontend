@@ -2,6 +2,10 @@
 
 [Open portal to Alpha Steelworks world](https://alpha-steelwork.web.app/)
 
+### Admin credentials
+Email - anya@adorable.com
+Password - 123456
+
 ### Features of this application
 
 1. Other than `Home`, `Blogs` and `Portfolio` route, every route is protected.
