@@ -19,4 +19,13 @@ module.exports = {
     ],
   },
   plugins: [require("daisyui")],
+  theme: {
+    extend: {
+      fontFamily: {
+        "concert-one": ["Concert One"],
+        roboto: ["Roboto"],
+        montserrat: ["Montserrat"],
+      },
+    },
+  },
 };

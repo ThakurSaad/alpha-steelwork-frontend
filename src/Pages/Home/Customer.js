@@ -10,9 +10,9 @@ const Customer = ({ review }) => {
       <div className="card-body rounded-md p-8">
         <h2 className="card-title text-2xl">{name}</h2>
         <hr className="border-separate my-2 border-primary" />
-        <p className="text-xl font-serif">{description}</p>
+        <p className="text-xl">{description}</p>
         <hr className="border-separate my-2 border-primary" />
-        <p className="text-xl font-serif">
+        <p className="text-xl">
           Ratings &nbsp; {rating}{" "}
           <FontAwesomeIcon icon={faStar} size="sm"></FontAwesomeIcon>
         </p>

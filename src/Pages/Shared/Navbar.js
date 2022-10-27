@@ -3,6 +3,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
+import fire from "../../assets/logo/fire.svg";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -66,20 +67,21 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent rounded-box w-52"
             >
               {menuitems}
             </ul>
           </div>
+          <img src={fire} alt="fire" className="bg-white rounded-full" />
           <Link
             to="/"
-            className="btn btn-ghost hover:btn-primary hover:text-white hover:rounded-full font-bold text-xl"
+            className="btn btn-ghost normal-case hover:btn-primary hover:text-white hover:rounded-full text-xl"
           >
             Alpha Steelwork
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">{menuitems}</ul>
+        <div className="navbar-center hidden lg:flex bg-accent">
+          <ul className="menu menu-horizontal p-0 bg-accent">{menuitems}</ul>
         </div>
         <div className="navbar-end">
           <label

@@ -6,7 +6,9 @@ import Customer from "./Customer";
 
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch("https://infinite-basin-98544.herokuapp.com/reviews").then((res) => res.json())
+    fetch("https://infinite-basin-98544.herokuapp.com/reviews").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -15,11 +17,13 @@ const Review = () => {
 
   return (
     <section
-      style={{
-        // background: `url(${feedbackBg})`,
-        // backgroundSize: "cover",
-        // backgroundRepeat: "repeat-y",
-      }}
+      style={
+        {
+          // background: `url(${feedbackBg})`,
+          // backgroundSize: "cover",
+          // backgroundRepeat: "repeat-y",
+        }
+      }
       className="py-32"
     >
       <h2 className="text-5xl font-semibold text-center">Customer Feedback</h2>
