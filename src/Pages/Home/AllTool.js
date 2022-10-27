@@ -24,7 +24,7 @@ const AllTool = () => {
       }}
     >
       <h2 className="text-5xl font-semibold text-center pb-8">All Tools</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
         {tools.map((tool) => (
           <Tool key={tool._id} tool={tool}></Tool>
         ))}

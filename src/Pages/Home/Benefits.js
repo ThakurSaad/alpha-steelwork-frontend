@@ -17,7 +17,7 @@ const Benefits = () => {
         Why Choose Our Services?
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-8">
-        <div className="border-2 rounded-none card max-w-sm text-white hover:bg-black duration-500 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-stone-800 duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -29,7 +29,7 @@ const Benefits = () => {
             </p>
           </div>
         </div>
-        <div className="border-2 rounded-none card max-w-sm text-white hover:bg-black duration-500 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-stone-800 duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -42,7 +42,7 @@ const Benefits = () => {
             </p>
           </div>
         </div>
-        <div className="border-2 rounded-none card max-w-sm text-white hover:bg-black duration-500 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-stone-800 duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -55,7 +55,7 @@ const Benefits = () => {
             </p>
           </div>
         </div>
-        <div className="border-2 rounded-none card max-w-sm text-white hover:bg-black duration-500 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-stone-800 duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -68,7 +68,7 @@ const Benefits = () => {
             </p>
           </div>
         </div>
-        <div className="border-2 rounded-none card max-w-sm text-white hover:bg-black duration-500 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-stone-800 duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />
@@ -77,7 +77,7 @@ const Benefits = () => {
             <p>Reliable, Effective &Technically Advanced Products!</p>
           </div>
         </div>
-        <div className="border-2 rounded-none card max-w-sm text-white hover:bg-black duration-500 shadow-xl">
+        <div className="card max-w-sm text-white hover:bg-stone-800 duration-300 shadow-xl">
           <div className="card-body">
             <h2 className="card-title font-bold text-2xl">
               <FontAwesomeIcon icon={faCircleCheck} size="xl" />

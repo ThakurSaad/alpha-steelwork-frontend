@@ -18,11 +18,11 @@ const Tool = ({ tool }) => {
   };
 
   return (
-    <div className="card w-72 bg-base-100 shadow-xl p-2 rounded-sm">
-      <figure>
+    <div className="card w-64 h-[480px] bg-base-100 shadow-xl p-1 rounded-md">
+      <figure className="h-[241px]">
         <img src={image} alt="tool" />
       </figure>
-      <div className="card-body">
+      <div className="px-1">
         <h2 className="card-title text-2xl">{name}</h2>
         <p>{description}</p>
         <p>Minimum Order Quantity : {minOrderQuantity}/piece</p>
