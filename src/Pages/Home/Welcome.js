@@ -9,7 +9,7 @@ import React from "react";
 const Welcome = () => {
   return (
     <section>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen">
         <div className="hero-content grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div>
             <h1 className="text-4xl mb-6">

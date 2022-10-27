@@ -7,16 +7,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import buisnessBg from "../../assets/buisness-bg.jpg";
+// import buisnessBg from "../../assets/buisness-bg.jpg";
 import Stats from "./Stats";
 
 const BusinessSummary = () => {
   return (
     <section
       style={{
-        background: `url(${buisnessBg})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "repeat-y",
+        // background: `url(${buisnessBg})`,
+        // backgroundSize: "cover",
+        // backgroundRepeat: "repeat-y",
       }}
       className="pb-32"
     >

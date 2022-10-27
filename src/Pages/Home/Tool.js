@@ -18,7 +18,7 @@ const Tool = ({ tool }) => {
   };
 
   return (
-    <div className="card border h-[480px] bg-base-100 p-1 rounded-md">
+    <div className="card border h-[480px] bg-base-100 p-1 hover:shadow-xl duration-100 rounded-md">
       <div className="mx-auto">
         <figure className="h-60 w-60">
           <img className="rounded" src={image} alt="tool" />

@@ -26,7 +26,7 @@ import NotFound from "./Pages/Shared/NotFound";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-base-200 bg-opacity-25">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

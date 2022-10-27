@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import feedbackBg from "../../assets/parts-bg.jpg";
+// import feedbackBg from "../../assets/parts-bg.jpg";
 import Loading from "../Shared/Loading";
 import Customer from "./Customer";
 
@@ -16,9 +16,9 @@ const Review = () => {
   return (
     <section
       style={{
-        background: `url(${feedbackBg})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "repeat-y",
+        // background: `url(${feedbackBg})`,
+        // backgroundSize: "cover",
+        // backgroundRepeat: "repeat-y",
       }}
       className="py-32"
     >
