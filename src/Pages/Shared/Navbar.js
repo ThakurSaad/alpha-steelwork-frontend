@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar text-white bg-accent">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -71,7 +71,10 @@ const Navbar = () => {
               {menuitems}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <Link
+            to="/"
+            className="btn btn-ghost hover:btn-primary hover:text-white hover:rounded-full font-bold text-xl"
+          >
             Alpha Steelwork
           </Link>
         </div>
