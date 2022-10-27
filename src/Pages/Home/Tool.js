@@ -18,20 +18,27 @@ const Tool = ({ tool }) => {
   };
 
   return (
-    <div className="card w-64 h-[480px] bg-base-100 shadow-xl p-1 rounded-md">
-      <figure className="h-[241px]">
-        <img src={image} alt="tool" />
-      </figure>
+    <div className="card border h-[480px] bg-base-100 p-1 rounded-md">
+      <div className="mx-auto">
+        <figure className="h-60 w-60">
+          <img className="rounded" src={image} alt="tool" />
+        </figure>
+      </div>
       <div className="px-1">
-        <h2 className="card-title text-2xl">{name}</h2>
-        <p>{description}</p>
-        <p>Minimum Order Quantity : {minOrderQuantity}/piece</p>
-        <p>Available Quantity : {availQuantity}</p>
-        <p>Price : {price}$</p>
-        <div className="card-actions">
+        <h2 className="font-bold">{name}</h2>
+        <p className="relative">
+          <span className="absolute text-primary font-bold">$</span>
+          <span className="text-3xl font-bold pl-3">{price}</span>
+        </p>
+        <p className="text-sm">{description}</p>
+        <p className="text-sm">
+          Minimum Order Quantity : {minOrderQuantity}/piece
+        </p>
+        <p className="text-sm">Available Quantity : {availQuantity}</p>
+        <div className="card-actions pt-4">
           <button
             onClick={() => handlePurchase(_id)}
-            className="btn btn-primary text-white"
+            className="btn rounded-full w-full btn-primary text-white text-sm"
           >
             Purchase
           </button>

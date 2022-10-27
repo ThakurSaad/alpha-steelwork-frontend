@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import Tool from "./Tool";
-import allToolBg from "../../assets/all-tool-bg.jpg";
+// import allToolBg from "../../assets/all-tool-bg.jpg";
 
 const AllTool = () => {
   const { data: tools, isLoading } = useQuery("tools", () =>
@@ -18,13 +18,15 @@ const AllTool = () => {
   return (
     <section
       className="min-h-screen py-16"
-      style={{
-        background: `url(${allToolBg})`,
-        backgroundSize: "contain",
-      }}
+      style={
+        {
+          // background: `url(${allToolBg})`,
+          // backgroundSize: "contain",
+        }
+      }
     >
       <h2 className="text-5xl font-semibold text-center pb-8">All Tools</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mx-8">
         {tools.map((tool) => (
           <Tool key={tool._id} tool={tool}></Tool>
         ))}
