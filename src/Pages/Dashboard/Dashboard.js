@@ -17,11 +17,11 @@ const Dashboard = () => {
           type="checkbox"
           className="drawer-toggle"
         />
-        <div className="drawer-content">
-          <h2 className="text-5xl font-bold">Dashboard</h2>
+        <div className="drawer-content ml-4">
+          <h2 className="text-5xl font-bold mt-4">Dashboard</h2>
           <Outlet />
         </div>
-        <div className="drawer-side mr-8 rounded-br-lg">
+        <div className="drawer-side mr-4">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
           <ul className="ul-style menu p-4 overflow-y-auto w-80 bg-accent text-white">
             <li className="li-style">

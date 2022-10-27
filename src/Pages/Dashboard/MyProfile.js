@@ -64,7 +64,7 @@ const MyProfile = () => {
   return (
     <section>
       <h2 className="text-3xl font-semibold text-primary my-4">My Profile</h2>
-      <div className="profile px-4">
+      <div className="profile">
         <div className="current-profile mt-6 mb-20">
           <div className="card max-w-sm bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
