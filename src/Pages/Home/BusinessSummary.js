@@ -13,12 +13,13 @@ import Stats from "./Stats";
 const BusinessSummary = () => {
   return (
     <section
-      style={{
-        // background: `url(${buisnessBg})`,
-        // backgroundSize: "cover",
-        // backgroundRepeat: "repeat-y",
-      }}
-      className="pb-32"
+      style={
+        {
+          // background: `url(${buisnessBg})`,
+          // backgroundSize: "cover",
+          // backgroundRepeat: "repeat-y",
+        }
+      }
     >
       <h2 className="text-5xl font-semibold text-center pb-20 pt-32">
         We have acquired trust all over the world

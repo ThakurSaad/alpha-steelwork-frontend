@@ -25,7 +25,7 @@ const Tool = ({ tool }) => {
         </figure>
       </div>
       <div className="px-1">
-        <h2 className="font-bold">{name}</h2>
+        <h2 className="text-xl">{name}</h2>
         <p className="relative">
           <span className="absolute text-primary font-bold">$</span>
           <span className="text-3xl font-bold pl-3">{price}</span>

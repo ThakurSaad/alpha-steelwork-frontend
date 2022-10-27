@@ -72,10 +72,14 @@ const Navbar = () => {
               {menuitems}
             </ul>
           </div>
-          <img src={fire} alt="fire" className="bg-white rounded-full" />
+          <img
+            src={fire}
+            alt="fire"
+            className="h-7 w-7 lg:ml-4 bg-white rounded-full"
+          />
           <Link
             to="/"
-            className="btn btn-ghost normal-case hover:btn-primary hover:text-white hover:rounded-full text-xl"
+            className="btn btn-ghost normal-case border-0 pl-1 hover:text-primary hover:rounded-full text-xl"
           >
             Alpha Steelwork
           </Link>

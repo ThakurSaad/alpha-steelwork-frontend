@@ -29,7 +29,7 @@ const Tools = () => {
           // backgroundRepeat: "repeat-y",
         }
       }
-      className="py-32"
+      className="pt-32"
     >
       <h2 className="text-5xl font-semibold text-center mb-8">
         Tools We Manufacture
