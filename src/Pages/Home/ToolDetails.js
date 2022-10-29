@@ -108,7 +108,6 @@ const ToolDetails = () => {
               <span className="absolute bottom-0 font-bold">/piece</span>
             </p>
             <p className="text-sm my-1">{description}</p>
-
             <table>
               <tbody>
                 <tr>
@@ -133,12 +132,7 @@ const ToolDetails = () => {
                 </tr>
               </tbody>
             </table>
-
-            {/* <p className="text-sm">
-              Minimum Order Quantity : {minOrderQuantity}/piece
-            </p>
-            <p className="text-sm">Available Quantity : {availQuantity}</p> */}
-            <h2 className="mt-2 text-sm font-bold">
+            <h2 className="mt-2 text-sm">
               Please Fill Up The Form Below To Complete The Purchase
             </h2>
           </div>
