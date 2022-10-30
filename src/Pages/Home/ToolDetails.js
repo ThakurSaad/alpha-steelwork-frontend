@@ -62,7 +62,7 @@ const ToolDetails = () => {
       price: parseInt(price),
       shouldPay: parseInt(price) * parseInt(quantity),
     };
-    console.log(order);
+
     if (
       quantity > parseInt(minOrderQuantity) &&
       quantity <= parseInt(availQuantity)
@@ -94,7 +94,7 @@ const ToolDetails = () => {
   return (
     <section className="min-h-screen">
       <div className="tool-details w-80 md:w-9/12 bg-base-100 mx-auto">
-        <div className="md:flex md:items-center mt-4">
+        <div className="md:flex md:items-center p-4">
           <div className="card-photo flex items-center justify-center border rounded-md md:w-[450px]">
             <figure>
               <img className="rounded-md" src={image} alt="tool" />
@@ -138,88 +138,97 @@ const ToolDetails = () => {
           </div>
         </div>
 
-        <div className="order-form">
-          <form onSubmit={handleSubmit}>
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Name</span>
-            </label>
-            <input
-              type="text"
-              name="name"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={displayName}
-              disabled
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Email</span>
-            </label>
-            <input
-              type="email"
-              name="email"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={email}
-              disabled
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">
-                Product Name
-              </span>
-            </label>
-            <input
-              type="text"
-              name="productName"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={name}
-              disabled
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Address</span>
-            </label>
-            <input
-              type="text"
-              name="address"
-              placeholder="Your Address"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              required
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Contact No</span>
-            </label>
-            <input
-              type="number"
-              name="contact"
-              placeholder="Your Contact No"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Quantity</span>
-            </label>
-            <input
-              type="number"
-              name="quantity"
-              placeholder="Order Quantity"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={minOrderQuantity}
-              required
-              onChange={(e) => {
-                setQuantity(e.target.value);
-              }}
-            />
-            <label className="label">
-              <span className="label-text-alt text-red-500">
-                {" "}
-                {errorElement}
-              </span>
-            </label>
-            <input
-              className="btn btn-primary w-full max-w-xs block my-4"
-              type="submit"
-              value="Order Now"
-              disabled={
-                quantity < parseInt(minOrderQuantity) ||
-                quantity > parseInt(availQuantity)
-              }
-            />
+        <div className="order-form p-4">
+          <form
+            onSubmit={handleSubmit}
+            className="grid md:grid-cols-2 sm:gap-4 lg:gap-0 mx-auto"
+          >
+            <div>
+              <label className="label">
+                <span className="label-text font-semibold pl-3">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="input rounded-md w-full max-w-xs"
+                defaultValue={displayName}
+                disabled
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-3">Email</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                className="input rounded-md w-full max-w-xs"
+                defaultValue={email}
+                disabled
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-3">
+                  Product Name
+                </span>
+              </label>
+              <input
+                type="text"
+                name="productName"
+                className="input rounded-md w-full max-w-xs"
+                defaultValue={name}
+                disabled
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text font-semibold pl-3">Address</span>
+              </label>
+              <input
+                type="text"
+                name="address"
+                placeholder="Your Address"
+                className="input rounded-md w-full max-w-xs"
+                required
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-3">
+                  Contact No
+                </span>
+              </label>
+              <input
+                type="number"
+                name="contact"
+                placeholder="Your Contact No"
+                className="input rounded-md w-full max-w-xs"
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-3">Quantity</span>
+              </label>
+              <input
+                type="number"
+                name="quantity"
+                placeholder="Order Quantity"
+                className="input rounded-md w-full max-w-xs"
+                defaultValue={minOrderQuantity}
+                required
+                onChange={(e) => {
+                  setQuantity(e.target.value);
+                }}
+              />
+              <label className="label">
+                <span className="label-text-alt text-red-500">
+                  {" "}
+                  {errorElement}
+                </span>
+              </label>
+              <input
+                className="btn btn-primary w-full rounded-full text-white max-w-xs block my-4"
+                type="submit"
+                value="Order Now"
+                disabled={
+                  quantity < parseInt(minOrderQuantity) ||
+                  quantity > parseInt(availQuantity)
+                }
+              />
+            </div>
           </form>
         </div>
       </div>
