@@ -11,7 +11,6 @@ const CheckoutForm = ({ payForTool }) => {
   const [transactionId, setTransactionId] = useState("");
   const [processing, setProcessing] = useState(false);
 
-  //   console.log("inside checkoutForm", payForTool);
   const { _id, shouldPay, customerName, customer } = payForTool || "";
 
   useEffect(() => {
@@ -118,7 +117,7 @@ const CheckoutForm = ({ payForTool }) => {
           }}
         />
         <button
-          className="btn btn-primary btn-sm text-white my-4"
+          className="btn btn-primary btn-sm rounded-full w-1/2 mx-auto block text-white mt-4"
           type="submit"
           disabled={!stripe || !clientSecret || success}
         >

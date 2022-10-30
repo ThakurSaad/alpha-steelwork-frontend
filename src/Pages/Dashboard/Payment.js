@@ -33,18 +33,20 @@ const Payment = () => {
       <h2 className="text-3xl font-semibold text-primary my-4 ml-3">
         Complete Payment
       </h2>
-      <div className="order-details">
-        <OrderDetails
-          key={payForTool._id}
-          payForTool={payForTool}
-        ></OrderDetails>
-      </div>
-      <div className="payment-stripe py-12">
-        <div className="card max-w-sm bg-base-100 shadow-xl">
-          <div className="card-body">
-            <Elements stripe={stripePromise}>
-              <CheckoutForm payForTool={payForTool} />
-            </Elements>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="order-details">
+          <OrderDetails
+            key={payForTool._id}
+            payForTool={payForTool}
+          ></OrderDetails>
+        </div>
+        <div className="payment-stripe">
+          <div className="card max-w-sm bg-base-100 hover:shadow-lg">
+            <div className="card-body">
+              <Elements stripe={stripePromise}>
+                <CheckoutForm payForTool={payForTool} />
+              </Elements>
+            </div>
           </div>
         </div>
       </div>
