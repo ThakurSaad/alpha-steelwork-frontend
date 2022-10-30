@@ -33,6 +33,8 @@ Password - 123456
 - react swiper
 - typeWriterJS
 - react vertical timeline
+- react count up
+- react visibility sensor
 
 ### New things I realized during this project
 

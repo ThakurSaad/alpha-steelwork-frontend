@@ -1,9 +1,11 @@
 import React from "react";
+import VisibilitySensor from "react-visibility-sensor";
+import CountUp from "react-countup";
 
 const Stats = () => {
   return (
     <div>
-      <div className="text-center hidden lg:animate-bounce md:block pt-24 pb-16">
+      <div className="text-center hidden md:block pt-24 pb-16">
         <div className="stats stats-vertical lg:stats-horizontal bg-transparent items-end hover:bg-white hover:shadow-2xl duration-300 py-8">
           <div className="stat">
             <div className="stat-figure text-primary">
@@ -25,8 +27,16 @@ const Stats = () => {
               We launched our official instagram this year
             </div>
             <div className="stat-title">Total Likes</div>
-            <div className="stat-value text-primary md:text-6xl">25.6K</div>
-            <div className="stat-desc">7% more than last month</div>
+            <div className="stat-value text-primary md:text-6xl">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div style={{ height: 100 }}>
+                    {isVisible ? <CountUp end={25} /> : null}.6K{" "}
+                    <p className="stat-desc">7% more than last month</p>
+                  </div>
+                )}
+              </VisibilitySensor>
+            </div>
           </div>
 
           <div className="stat">
@@ -46,8 +56,16 @@ const Stats = () => {
               </svg>
             </div>
             <div className="stat-title">Revenue Increased</div>
-            <div className="stat-value text-secondary md:text-6xl">2.6M</div>
-            <div className="stat-desc">11% more than last month</div>
+            <div className="stat-value text-secondary md:text-6xl">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div style={{ height: 100 }}>
+                    {isVisible ? <CountUp duration={2} end={2} /> : null}.5M
+                    <p className="stat-desc">11% more than last month</p>
+                  </div>
+                )}
+              </VisibilitySensor>
+            </div>
           </div>
 
           <div className="stat">
@@ -62,34 +80,69 @@ const Stats = () => {
               </div>
             </div>
             <div className="stat-title">Customer comebacks</div>
-            <div className="stat-value md:text-6xl">86%</div>
-            <div className="stat-desc text-black">
-              Mostly comes back with larger orders
+            <div className="stat-value md:text-6xl">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div style={{ height: 100 }}>
+                    {isVisible ? <CountUp end={86} /> : null}%
+                    <p className="stat-desc">
+                      Mostly comes back with larger orders
+                    </p>
+                  </div>
+                )}
+              </VisibilitySensor>
             </div>
           </div>
         </div>
       </div>
-      <div className="text-center py-16 animate-pulse md:hidden">
+
+      <div className="text-center py-16 md:hidden">
         <div className="stats stats-vertical lg:stats-horizontal shadow">
           <div className="stat">
             <div className="stat-title">
               We launched our official instagram this year
             </div>
             <div className="stat-title">Total Likes</div>
-            <div className="stat-value">31K</div>
-            <div className="stat-desc">7% more than last month</div>
+            <div className="stat-value">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div style={{ height: 100 }}>
+                    {isVisible ? <CountUp end={25} /> : null}.6K{" "}
+                    <p className="stat-desc">7% more than last month</p>
+                  </div>
+                )}
+              </VisibilitySensor>
+            </div>
           </div>
 
           <div className="stat">
             <div className="stat-title">Revenue Increased</div>
-            <div className="stat-value">2.6M</div>
-            <div className="stat-desc">↗︎ 400 (22%)</div>
+            <div className="stat-value">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div style={{ height: 100 }}>
+                    {isVisible ? <CountUp duration={2} end={2} /> : null}.5M
+                    <p className="stat-desc">↗︎ 400 (22%)</p>
+                  </div>
+                )}
+              </VisibilitySensor>
+            </div>
           </div>
 
           <div className="stat">
             <div className="stat-title">Customer comebacks</div>
-            <div className="stat-value">86%</div>
-            <div className="stat-desc">Mostly comes back with larger orders</div>
+            <div className="stat-value">
+              <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                {({ isVisible }) => (
+                  <div style={{ height: 100 }}>
+                    {isVisible ? <CountUp start={2} end={86} /> : null}%
+                    <p className="stat-desc">
+                      Mostly comes back with larger orders
+                    </p>
+                  </div>
+                )}
+              </VisibilitySensor>
+            </div>
           </div>
         </div>
       </div>

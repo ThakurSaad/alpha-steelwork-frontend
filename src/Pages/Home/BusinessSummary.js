@@ -7,43 +7,68 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-// import buisnessBg from "../../assets/buisness-bg.jpg";
 import Stats from "./Stats";
+import VisibilitySensor from "react-visibility-sensor";
+import CountUp from "react-countup";
 
 const BusinessSummary = () => {
   return (
-    <section
-      style={
-        {
-          // background: `url(${buisnessBg})`,
-          // backgroundSize: "cover",
-          // backgroundRepeat: "repeat-y",
-        }
-      }
-    >
+    <section>
       <h2 className="text-5xl font-semibold text-center pb-20 pt-32">
         We have acquired trust all over the world
       </h2>
       <div className="grid grid-cols-1 gap-y-12 justify-items-center lg:grid-cols-4">
         <div className="text-center">
           <FontAwesomeIcon icon={faFlag} size="4x" className="" />
-          <p className="font-bold text-5xl my-5">40+ </p>
-          <h5 className="font-semibold text-3xl">Countries</h5>
+          <div className="font-bold text-5xl my-5">
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div style={{ height: 100 }}>
+                  {isVisible ? <CountUp end={40} /> : null}+{" "}
+                  <h5 className="font-semibold text-3xl">Countries</h5>
+                </div>
+              )}
+            </VisibilitySensor>
+          </div>
         </div>
         <div className="text-center">
           <FontAwesomeIcon icon={faPeopleGroup} size="4x" className="" />
-          <p className="font-bold text-5xl my-5">100+ </p>
-          <h5 className="font-semibold text-3xl">Customers</h5>
+          <div className="font-bold text-5xl my-5">
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div style={{ height: 100 }}>
+                  {isVisible ? <CountUp end={100} /> : null}+{" "}
+                  <h5 className="font-semibold text-3xl">Customers</h5>
+                </div>
+              )}
+            </VisibilitySensor>
+          </div>
         </div>
         <div className="text-center">
           <FontAwesomeIcon icon={faMoneyBillTrendUp} size="4x" className="" />
-          <p className="font-bold text-5xl my-5">350M+ </p>
-          <h5 className="font-semibold text-3xl">Revenue/y</h5>
+          <div className="font-bold text-5xl my-5">
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div style={{ height: 100 }}>
+                  {isVisible ? <CountUp end={350} /> : null}M+{" "}
+                  <h5 className="font-semibold text-3xl">Revenue/y</h5>
+                </div>
+              )}
+            </VisibilitySensor>
+          </div>
         </div>
         <div className="text-center">
           <FontAwesomeIcon icon={faScrewdriverWrench} size="4x" className="" />
-          <p className="font-bold text-5xl my-5">75+ </p>
-          <h5 className="font-semibold text-3xl">Tools</h5>
+          <div className="font-bold text-5xl my-5">
+            <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+              {({ isVisible }) => (
+                <div style={{ height: 100 }}>
+                  {isVisible ? <CountUp end={75} /> : null}+{" "}
+                  <h5 className="font-semibold text-3xl">Tools</h5>
+                </div>
+              )}
+            </VisibilitySensor>
+          </div>
         </div>
       </div>
       <Stats />
