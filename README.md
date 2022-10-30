@@ -29,6 +29,8 @@ Password - 123456
 - react hook form
 - react toastIfy
 - stripe
+- react swiper
+- typeWriterJS
 
 ### New things I realized during this project
 

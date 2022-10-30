@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import Typewriter from "typewriter-effect";
 
 const Welcome = () => {
   return (
@@ -18,8 +19,16 @@ const Welcome = () => {
             </h1>
             <hr className="border-2 mb-2 border-primary" />
             <p className="py-4">
-              A Great Place to Work-Certified organization, we are spread across
-              five continents with an employee base of over 65,000.
+              A Great Place to Work-Certified organization.
+              <Typewriter
+                options={{
+                  strings: [
+                    "We are spread across five continents with an employee base of over 65,000.",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
             </p>
           </div>
           <div className="col-span-3 grid gap-y-10 grid-cols-1 md:grid-cols-3 bg-white hover:shadow-2xl duration-300 lg:animate-bounce py-14">

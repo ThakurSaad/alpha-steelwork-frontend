@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import banner from "../../assets/banner.jpg";
 import bannerSm from "../../assets/bannerSm.png";
+import Typewriter from "typewriter-effect";
 
 const Banner = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Banner = () => {
             className="min-h-screen block md:hidden max-w-full"
           />
         </div>
-        <div className="absolute top-52 right-0 left-0 animate-pulse">
+        <div className="absolute top-52 right-0 left-0">
           <div>
             <h1
               className="md:text-7xl text-4xl text-white font-bold text-center my-4"
@@ -28,7 +29,14 @@ const Banner = () => {
                 textShadow: "0 0 50px black, 0 0 50px black, 0 0 10px yellow",
               }}
             >
-              Alpha Steelwork
+              <Typewriter
+                options={{
+                  strings: ["Alpha Steelwork"],
+                  autoStart: true,
+                  loop: true,
+                  pauseFor: 4000,
+                }}
+              />
             </h1>
             <h2
               className="text-2xl md:text-4xl text-white font-semibold text-center my-4"
@@ -41,13 +49,14 @@ const Banner = () => {
           </div>
           <div className="text-center">
             <button
-              className="btn btn-lg btn-primary rounded-sm text-white animate-pulse"
+              className="btn md:btn-lg btn-primary rounded text-white"
               onClick={() => navigate("/allTool")}
             >
               Our Products
             </button>
-            <button className="btn btn-lg btn-primary rounded-sm ml-4 text-white animate-pulse"
-            onClick={() => navigate("/blogs")}
+            <button
+              className="btn md:btn-lg btn-primary rounded ml-4 text-white"
+              onClick={() => navigate("/blogs")}
             >
               Read more
             </button>
