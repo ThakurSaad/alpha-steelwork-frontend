@@ -24,14 +24,14 @@ const Review = () => {
           // backgroundRepeat: "repeat-y",
         }
       }
-      className="pt-32"
+      className="pt-32 mx-auto"
     >
       <h2 className="text-5xl font-semibold text-center">Customer Feedback</h2>
-      <div className="grid gird-cols-1 justify-items-center gap-8 lg:grid-cols-3 mx-8 lg:mx-8 rounded-md mt-4 p-4">
+      {/* <div className="grid gird-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3 md:mx-4 rounded-md mt-4">
         {reviews.map((review) => (
           <Customer key={review._id} review={review} />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
