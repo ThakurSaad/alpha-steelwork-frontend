@@ -6,11 +6,11 @@ const Customer = ({ review }) => {
   const { name, rating, description } = review || "";
 
   return (
-    <div className="card max-w-[320px] h-[320px] md:w-[400px] md:h-[400px] bg-base-100 hover:bg-transparent duration-300 hover:shadow-2xl shadow-xl rounded-sm">
+    <div className="card w-[320px] h-[320px] lg:w-[450px] lg:h-[450px] bg-accent rounded-xl text-white shadow hover:shadow-xl hover:shadow-accent duration-75">
       <div className="card-body rounded-md p-8">
         <h2 className="card-title text-2xl">{name}</h2>
         <hr className="border-separate my-2 border-primary" />
-        <p className="text-xl">{description}</p>
+        <p className="">{description}</p>
         <hr className="border-separate my-2 border-primary" />
         <p className="text-xl">
           Ratings &nbsp; {rating}{" "}
