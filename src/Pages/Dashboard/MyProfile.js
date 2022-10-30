@@ -66,7 +66,7 @@ const MyProfile = () => {
       <h2 className="text-3xl font-semibold text-primary my-4">My Profile</h2>
       <div className="profile">
         <div className="current-profile mt-6 mb-20">
-          <div className="card max-w-sm bg-base-100 shadow-xl">
+          <div className="card max-w-sm bg-base-100 shadow-xl px-4 lg:px-0">
             <figure className="px-10 pt-10">
               <div className="avatar">
                 <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -78,7 +78,7 @@ const MyProfile = () => {
                 </div>
               </div>
             </figure>
-            <div className="pl-4 py-8">
+            <div className="lg:pl-4 py-8">
               <h2 className="card-title text-2xl uppercase">{displayName}</h2>
               <hr className="border-2 my-6 border-accent mr-4" />
               <p className="my-3">
@@ -113,73 +113,82 @@ const MyProfile = () => {
           </div>
         </div>
         <div className="update-profile">
-          <form onSubmit={handleSubmit}>
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Education</span>
-            </label>
-            <input
-              type="text"
-              name="education"
-              placeholder="Your Education"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={education}
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Address</span>
-            </label>
-            <input
-              type="text"
-              name="address"
-              placeholder="Your Address"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={address}
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Contact No</span>
-            </label>
-            <input
-              type="number"
-              name="contact"
-              placeholder="Your Contact No"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={contact}
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">LinkedIn</span>
-            </label>
-            <input
-              type="text"
-              name="linkedIn"
-              placeholder="LinkedIn Profile Link"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={linkedIn}
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">FaceBook</span>
-            </label>
-            <input
-              type="text"
-              name="faceBook"
-              placeholder="FaceBook Profile Link"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={faceBook}
-            />
-            <label className="label">
-              <span className="label-text font-semibold pl-3">Hobby</span>
-            </label>
-            <input
-              type="text"
-              name="hobby"
-              placeholder="Your hobbies"
-              className="input border-r-0 border-l-0 border-t-0 border-b-2 border-primary rounded-none w-full max-w-xs"
-              defaultValue={hobby}
-            />
+          <form
+            onSubmit={handleSubmit}
+            className="grid sm:grid-cols-2 sm:gap-4 lg:gap-0 mx-auto"
+          >
+            <div>
+              <label className="label">
+                <span className="label-text font-semibold pl-2">Education</span>
+              </label>
+              <input
+                type="text"
+                name="education"
+                placeholder="Your Education"
+                className="input rounded-md w-full max-w-xs pl-1 ml-2"
+                defaultValue={education}
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-2">Address</span>
+              </label>
+              <input
+                type="text"
+                name="address"
+                placeholder="Your Address"
+                className="input rounded-md w-full max-w-xs pl-1 ml-2"
+                defaultValue={address}
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-2">
+                  Contact No
+                </span>
+              </label>
+              <input
+                type="number"
+                name="contact"
+                placeholder="Your Contact No"
+                className="input rounded-md w-full max-w-xs pl-1 ml-2"
+                defaultValue={contact}
+              />
+            </div>
+            <div>
+              <label className="label">
+                <span className="label-text font-semibold pl-2">LinkedIn</span>
+              </label>
+              <input
+                type="text"
+                name="linkedIn"
+                placeholder="LinkedIn Profile Link"
+                className="input rounded-md w-full max-w-xs pl-1 ml-2"
+                defaultValue={linkedIn}
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-2">FaceBook</span>
+              </label>
+              <input
+                type="text"
+                name="faceBook"
+                placeholder="FaceBook Profile Link"
+                className="input rounded-md w-full max-w-xs pl-1 ml-2"
+                defaultValue={faceBook}
+              />
+              <label className="label">
+                <span className="label-text font-semibold pl-2">Hobby</span>
+              </label>
+              <input
+                type="text"
+                name="hobby"
+                placeholder="Your hobbies"
+                className="input rounded-md w-full max-w-xs pl-1 ml-2"
+                defaultValue={hobby}
+              />
 
-            <input
-              className="btn btn-primary w-full max-w-xs block my-4"
-              type="submit"
-              value="Update profile"
-            />
+              <input
+                className="btn btn-primary text-white w-full rounded-full max-w-xs block my-4 mx-auto sm:mx-0"
+                type="submit"
+                value="Update profile"
+              />
+            </div>
           </form>
         </div>
       </div>
