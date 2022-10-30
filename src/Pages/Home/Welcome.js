@@ -18,7 +18,7 @@ const Welcome = () => {
               <span className="text-primary">Alpha Steelwork</span>
             </h2>
             <hr className="border-2 mb-2 border-primary" />
-            <p className="py-4">
+            <div className="py-4">
               A Great Place to Work-Certified organization.
               <Typewriter
                 options={{
@@ -29,7 +29,7 @@ const Welcome = () => {
                   loop: true,
                 }}
               />
-            </p>
+            </div>
           </div>
           <div className="col-span-3 grid gap-y-10 grid-cols-1 md:grid-cols-3 bg-white hover:shadow-2xl duration-300 lg:animate-bounce py-14">
             <div className="text-center md:flex md:justify-around">
