@@ -9,11 +9,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "./reviews.css";
 
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import {
+  Autoplay,
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Keyboard,
+} from "swiper";
 
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
@@ -27,14 +34,8 @@ const Review = () => {
   }
 
   return (
-    <section className="pt-32 mx-auto">
+    <section className="pt-32 max-w-6xl mx-auto">
       <h2 className="text-5xl font-semibold text-center">Customer Feedback</h2>
-      {/* <div className="grid gird-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3 md:mx-4 rounded-md mt-4">
-        {reviews.map((review) => (
-          <Customer key={review._id} review={review} />
-        ))}
-      </div> */}
-
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -47,16 +48,22 @@ const Review = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        pagination={{
+          clickable: true,
+        }}
+        keyboard={{
+          enabled: true,
+        }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectCoverflow, Autoplay, Pagination, Keyboard, Navigation]}
         className="mySwiper"
       >
-        {/* <SwiperSlide>
-          <Customer />
-        </SwiperSlide> */}
         {reviews.map((review) => (
-          <SwiperSlide>
-            <Customer key={review._id} review={review} />
+          <SwiperSlide key={review._id}>
+            <Customer review={review} />
           </SwiperSlide>
         ))}
       </Swiper>
