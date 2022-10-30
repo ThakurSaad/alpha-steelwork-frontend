@@ -6,15 +6,17 @@ import Review from "./Review";
 import Welcome from "./Welcome";
 import Benefits from "./Benefits";
 import ContactUs from "./ContactUs";
+import Started from "./Started";
 
 const Home = () => {
   return (
     <div>
       <Banner />
-      <Welcome/>
-      <Benefits/>
-      <Tools/>
-      <Review/>
+      <Welcome />
+      <Started />
+      <Benefits />
+      <Tools />
+      <Review />
       <BusinessSummary />
       <ContactUs />
     </div>

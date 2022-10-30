@@ -3,6 +3,7 @@
 [Open portal to Alpha Steelworks world](https://alpha-steelwork.web.app/)
 
 ### Admin credentials
+
 Email - anya@adorable.com
 Password - 123456
 
@@ -31,6 +32,7 @@ Password - 123456
 - stripe
 - react swiper
 - typeWriterJS
+- react vertical timeline
 
 ### New things I realized during this project
 

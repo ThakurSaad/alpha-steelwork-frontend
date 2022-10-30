@@ -13,10 +13,10 @@ const Welcome = () => {
       <div className="hero min-h-screen">
         <div className="hero-content grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div>
-            <h1 className="text-4xl mb-6">
+            <h2 className="text-4xl mb-6">
               Welcome to <br />
               <span className="text-primary">Alpha Steelwork</span>
-            </h1>
+            </h2>
             <hr className="border-2 mb-2 border-primary" />
             <p className="py-4">
               A Great Place to Work-Certified organization.
