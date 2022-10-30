@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import footerBg from "../../assets/footer-bg.png";
 
 const Footer = () => {
   return (
     <>
-      <section className="text-white bg-accent">
+      <section
+        className="text-white"
+        style={{
+          background: `url(${footerBg})`,
+          backgroundSize: "cover",
+        }}
+      >
         <footer className="footer p-10">
           <div>
             <span className="footer-title">Services</span>
@@ -49,7 +56,7 @@ const Footer = () => {
             </Link>
           </div>
         </footer>
-        <footer className="footer px-10 py-4 border-t">
+        <footer className="footer px-10 py-4">
           <div className="items-center grid-flow-col">
             <svg
               width="24"
