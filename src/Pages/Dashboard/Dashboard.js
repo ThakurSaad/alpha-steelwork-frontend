@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
 import useAdmin from "../../hooks/useAdmin";
-import "./Dashboard.css"
+import "./Dashboard.css";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -18,7 +18,7 @@ const Dashboard = () => {
           className="drawer-toggle"
         />
         <div className="drawer-content mx-2 lg:ml-4">
-          <h2 className="text-5xl font-bold mt-4">Dashboard</h2>
+          <h2 className="text-5xl font-bold mt-4 ml-3">Dashboard</h2>
           <Outlet />
         </div>
         <div className="drawer-side lg:mr-4">

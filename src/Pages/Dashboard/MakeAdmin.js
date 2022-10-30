@@ -23,7 +23,7 @@ const MakeAdmin = () => {
 
   return (
     <section className="min-h-screen">
-      <h2 className="text-3xl font-semibold text-primary my-4">Make Admin</h2>
+      <h2 className="text-3xl font-semibold text-primary my-4 ml-3">Make Admin</h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
