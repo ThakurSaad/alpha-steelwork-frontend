@@ -137,7 +137,7 @@ const Login = () => {
               </Link>
             </small>
           </p>
-          <div className="divider">OR</div>
+          <div className="divider text-sm">OR</div>
           <SocialLogin>Continue with google</SocialLogin>
         </div>
       </div>
