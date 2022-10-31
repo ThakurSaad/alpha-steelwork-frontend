@@ -16,7 +16,6 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount) {
           toast.success("Placed for shipment");
         }

@@ -16,7 +16,6 @@ const AdminDeleteOrderModal = ({ adminDeleteOrder, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
           toast.success("Order cancellation successful");
         }

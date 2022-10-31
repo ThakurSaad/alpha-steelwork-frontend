@@ -6,7 +6,7 @@ import auth from "../../firebase.init";
 const ManageProductsModal = ({ modalTool, refetch }) => {
   const [user] = useAuthState(auth);
   const { _id, name, image } = modalTool || "";
-  // console.log("Modal", modalTool);
+
   const handleConfirm = () => {
     fetch(`https://infinite-basin-98544.herokuapp.com/tool/${_id}`, {
       method: "DELETE",
@@ -20,7 +20,6 @@ const ManageProductsModal = ({ modalTool, refetch }) => {
           toast.success("Product deleted successfully");
           refetch();
         }
-        console.log(data);
       });
   };
 

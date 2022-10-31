@@ -56,7 +56,7 @@ const MyProfile = () => {
         } else {
           toast.error("We are sorry. Some error occurred. Please try again");
         }
-        console.log(data);
+
         refetch();
       });
   };

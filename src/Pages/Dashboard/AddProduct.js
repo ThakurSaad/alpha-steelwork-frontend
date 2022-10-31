@@ -29,7 +29,6 @@ const AddProduct = () => {
           toast.error("Some error occurred.Please try again");
         }
         event.target.reset();
-        console.log(data);
       });
   };
 

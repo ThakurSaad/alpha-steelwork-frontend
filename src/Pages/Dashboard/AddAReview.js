@@ -31,7 +31,6 @@ const AddAReview = () => {
         }
         event.target.reset();
       });
-    console.log(newReview);
   };
 
   return (

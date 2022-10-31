@@ -4,10 +4,6 @@ import ManageProductsModal from "./ManageProductsModal";
 const ManageProductsRow = ({ tool, index, refetch }) => {
   const [modalTool, setModalTool] = useState(null);
   const { image, name } = tool || "";
-  
-  // if (modalTool) {
-  //   // console.log("'modalToll' state", modalTool);
-  // }
 
   return (
     <>

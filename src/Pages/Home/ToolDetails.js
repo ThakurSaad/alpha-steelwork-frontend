@@ -4,6 +4,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import InnerImageZoom from "react-inner-image-zoom";
 
 const ToolDetails = () => {
   const [quantity, setQuantity] = useState(0);
@@ -97,7 +99,7 @@ const ToolDetails = () => {
         <div className="md:flex md:items-center p-4">
           <div className="card-photo flex items-center justify-center border rounded-md md:w-[450px]">
             <figure>
-              <img className="rounded-md" src={image} alt="tool" />
+              <InnerImageZoom src={`${image}`} alt="" zoomType="hover"/>
             </figure>
           </div>
           <div className="md:mx-4">

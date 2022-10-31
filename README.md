@@ -37,6 +37,7 @@ Password - 123456
 - react vertical timeline
 - react count up
 - react visibility sensor
+- react inner image zoom
 
 ### Homepage Screenshot
 

@@ -10,7 +10,7 @@ const AllTool = () => {
       res.json()
     )
   );
-  console.log(tools);
+
   if (isLoading) {
     return <Loading></Loading>;
   }

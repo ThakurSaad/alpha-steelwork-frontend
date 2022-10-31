@@ -19,7 +19,6 @@ const ManageOrders = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  // console.log(orders);
 
   return (
     <section>
