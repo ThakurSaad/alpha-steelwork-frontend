@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
-// import toolBg from "../../assets/parts-bg.jpg";
 import Loading from "../Shared/Loading";
 import Tool from "./Tool";
 
@@ -21,16 +20,7 @@ const Tools = () => {
   }
 
   return (
-    <section
-      style={
-        {
-          // background: `url(${toolBg})`,
-          // backgroundSize: "cover",
-          // backgroundRepeat: "repeat-y",
-        }
-      }
-      className="pt-32"
-    >
+    <section className="pt-32">
       <h2 className="text-5xl font-semibold text-center mb-8">
         Tools We Manufacture
       </h2>
