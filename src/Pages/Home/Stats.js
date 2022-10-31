@@ -97,12 +97,12 @@ const Stats = () => {
       </div>
 
       <div className="text-center py-16 md:hidden">
-        <div className="stats stats-vertical lg:stats-horizontal shadow">
-          <div className="stat">
-            <div className="stat-title">
+        <div className="stats w-11/12 stats-vertical lg:stats-horizontal shadow">
+          <div className="stat w-full px-1">
+            <div className="text-[#a19e9e] w-64 mx-auto">
               We launched our official instagram this year
             </div>
-            <div className="stat-title">Total Likes</div>
+            <div className="stat-title w-64 mx-auto">Total Likes</div>
             <div className="stat-value">
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                 {({ isVisible }) => (
@@ -115,7 +115,7 @@ const Stats = () => {
             </div>
           </div>
 
-          <div className="stat">
+          <div className="stat w-full p-1">
             <div className="stat-title">Revenue Increased</div>
             <div className="stat-value">
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
@@ -129,7 +129,7 @@ const Stats = () => {
             </div>
           </div>
 
-          <div className="stat">
+          <div className="stat w-full p-1">
             <div className="stat-title">Customer comebacks</div>
             <div className="stat-value">
               <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
