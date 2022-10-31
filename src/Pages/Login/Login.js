@@ -3,7 +3,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import loginBg from "../../assets/login-bg.jpg";
+import wave from "../../assets/wave.svg";
 import auth from "../../firebase.init";
 import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <section
       style={{
-        background: `url(${loginBg})`,
+        background: `url(${wave})`,
         backgroundSize: "cover",
       }}
       className="min-h-screen flex justify-center items-center"

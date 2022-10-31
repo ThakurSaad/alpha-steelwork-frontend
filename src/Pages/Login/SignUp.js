@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import loginBg from "../../assets/login-bg.jpg";
+import wave from "../../assets/wave.svg";
 import google from "../../assets/google.png";
 import {
   useCreateUserWithEmailAndPassword,
@@ -61,7 +61,7 @@ const SignUp = () => {
   return (
     <section
       style={{
-        background: `url(${loginBg})`,
+        background: `url(${wave})`,
         backgroundSize: "cover",
       }}
       className="min-h-screen flex justify-center items-center"
