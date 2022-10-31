@@ -16,12 +16,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // Custom Styles
 import styles from "./SwiperStyles/Benefactors.module.css";
 
 // import required modules
-import { EffectCube, Pagination } from "swiper";
+import { EffectCube, Pagination, Autoplay, Navigation, Keyboard } from "swiper";
 import Benefactor from "./Benefactor";
 
 const Benefactors = () => {
@@ -112,8 +113,17 @@ const Benefactors = () => {
                 shadowOffset: 20,
                 shadowScale: 0.94,
               }}
-              pagination={true}
-              modules={[EffectCube, Pagination]}
+              pagination={{
+                clickable: true,
+              }}
+              keyboard={{
+                enabled: true,
+              }}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
+              modules={[EffectCube, Autoplay, Pagination, Keyboard, Navigation]}
               className={`mySwiper ${styles.swiper}`}
             >
               {benefactors.map((benefactor) => (
