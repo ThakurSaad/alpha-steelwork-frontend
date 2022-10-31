@@ -1,4 +1,5 @@
 import React from "react";
+import Typewriter from "typewriter-effect";
 
 // images
 import thakur from "../../assets/thakur.jpeg";
@@ -16,6 +17,7 @@ import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 
+// Custom Styles
 import styles from "./SwiperStyles/Benefactors.module.css";
 
 // import required modules
@@ -36,7 +38,7 @@ const Benefactors = () => {
       _id: 2,
       name: "Kazi Samia",
       image: burhan,
-      profession: "Investor",
+      profession: "Heavy Industry Investor",
       speech:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptatibus a necessitatibus? Hic magnam esse voluptatibus quaerat, repudiandae quam nihil voluptate fugit!",
     },
@@ -77,11 +79,29 @@ const Benefactors = () => {
   return (
     <>
       <h2 className="text-5xl font-semibold text-center pt-32">
-        Our Benefactors
+        Top Benefactors
       </h2>
-      <section className="grid md:grid-cols-2 lg:mx-32">
-        <section className="hidden md:block"></section>
-        <section className="h-[400px] sm:h-[450px]">
+      <section className="grid grid-cols-1 md:grid-cols-2 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
+        <section className="flex flex-1 items-center justify-center">
+          <div className="lg:w-10/12">
+            <h3 className="text-3xl text-primary font-bold mt-8 md:mt-0">
+              <Typewriter
+                options={{
+                  strings: ["Our Most Trusted Advisors"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </h3>
+            <p className="sm:text-xl">
+              Meet our most most trusted clients who have worked with us for
+              over a decade. They have guided us, advised us and invested in our
+              company. They played a vital role to develope our company and made
+              us who we are now.
+            </p>
+          </div>
+        </section>
+        <section id="benefactors-cube" className="h-[400px] sm:h-[450px]">
           <div className="relative lg:h-[500px]">
             <Swiper
               effect={"cube"}
