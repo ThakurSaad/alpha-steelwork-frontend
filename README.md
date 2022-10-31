@@ -9,6 +9,8 @@ Password - 123456
 
 ### Features of this application
 
+[Homepage Screenshot](https://github.com/ThakurSaad/alpha-steelwork-frontend#homepage-screenshot)
+
 1. Other than `Home`, `Blogs` and `Portfolio` route, every route is protected.
 2. Admin route is specially protected with `RequireAdmin`
 3. Even if some one hacks into the `makeAdmin`, he/she can not make user admin. Because other than admin, normal user/anyone is prevented to make someone admin from the api itself.
@@ -38,7 +40,7 @@ Password - 123456
 
 ### Homepage Screenshot
 
-![solve]()
+![solve](https://github.com/ThakurSaad/alpha-steelwork-frontend/blob/main/src/assets/screenshot.png)
 
 ### New things I realized during this project
 
