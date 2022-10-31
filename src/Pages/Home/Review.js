@@ -11,7 +11,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "./reviews.css";
+import "./SwiperStyles/reviews.css";
 
 // import required modules
 import {

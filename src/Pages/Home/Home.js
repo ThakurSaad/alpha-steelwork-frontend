@@ -7,6 +7,7 @@ import Welcome from "./Welcome";
 import Benefits from "./Benefits";
 import ContactUs from "./ContactUs";
 import Started from "./Started";
+import Benefactors from "./Benefactors";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Tools />
       <Review />
       <BusinessSummary />
+      <Benefactors />
       <ContactUs />
     </div>
   );
