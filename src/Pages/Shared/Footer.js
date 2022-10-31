@@ -18,7 +18,7 @@ const Footer = () => {
           backgroundSize: "cover",
         }}
       >
-        <footer className="footer p-10 justify-items-center md:justify-items-start">
+        <footer className="footer p-10">
           <div className="grid grid-cols-3 gap-6">
             <a
               href="https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A"
