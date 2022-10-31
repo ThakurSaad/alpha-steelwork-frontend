@@ -79,7 +79,10 @@ const Benefactors = () => {
 
   return (
     <>
-      <h2 className="text-5xl font-semibold text-center pt-32">
+      <h2
+        id="benefactors-cube"
+        className="text-5xl font-semibold text-center pt-32"
+      >
         Top Benefactors
       </h2>
       <section className="grid grid-cols-1 md:grid-cols-2 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
@@ -102,7 +105,7 @@ const Benefactors = () => {
             </p>
           </div>
         </section>
-        <section id="benefactors-cube" className="h-[400px] sm:h-[450px]">
+        <section className="h-[400px] sm:h-[450px]">
           <div className="relative lg:h-[500px]">
             <Swiper
               effect={"cube"}
