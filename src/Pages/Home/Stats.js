@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 const Stats = () => {
   return (
     <div>
-      <div className="text-center hidden md:block pt-24 pb-16">
+      <div className="text-center hidden md:block pt-24">
         <div className="stats stats-vertical lg:stats-horizontal bg-transparent items-end hover:bg-white hover:shadow-2xl duration-300 py-8">
           <div className="stat">
             <div className="stat-figure text-primary">
