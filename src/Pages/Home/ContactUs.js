@@ -3,11 +3,11 @@ import React from "react";
 const ContactUs = () => {
   return (
     <div>
-      <div className="hero">
+      <div id="contactUs" className="hero mb-16">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:max-w-lg lg:ml-20 lg:text-left">
             <h1 className="text-5xl font-bold">Contact Us</h1>
-            <p className="py-6">
+            <p className="py-6 sm:text-xl">
               We will contact you back in 5 hours max. Please check your email
               in 5 hours. You can also contact our regional distributor
               directly.

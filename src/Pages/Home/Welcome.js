@@ -10,28 +10,24 @@ import Typewriter from "typewriter-effect";
 const Welcome = () => {
   return (
     <section>
-      <div className="hero min-h-screen">
+      <div className="hero mt-8 sm:mt-14 lg:mt-24 lg:mb-20 mb-14">
         <div className="hero-content grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div>
-            <h2 className="text-4xl mb-6">
-              Welcome to <br />
-              <span className="text-primary">Alpha Steelwork</span>
-            </h2>
-            <hr className="border-2 mb-2 border-primary" />
-            <div className="py-4">
-              A Great Place to Work-Certified organization.
+            <h2 className="text-3xl text-primary font-bold mt-8 sm:mt-0 mb-4">
               <Typewriter
                 options={{
-                  strings: [
-                    "We are spread across five continents with an employee base of over 65,000.",
-                  ],
+                  strings: ["Welcome to Alpha Steelwork"],
                   autoStart: true,
                   loop: true,
                 }}
               />
+            </h2>
+            <div className="sm:text-xl">
+              A Great Place to Work-Certified organization. We are spread across
+              five continents with an employee base of over 65,000.
             </div>
           </div>
-          <div className="col-span-3 grid gap-y-10 grid-cols-1 md:grid-cols-3 bg-white hover:shadow-2xl duration-300 lg:animate-bounce py-14">
+          <div className="col-span-3 grid gap-y-10 grid-cols-1 md:grid-cols-3 bg-white border rounded-xl hover:shadow-2xl duration-300 lg:animate-bounce py-14">
             <div className="text-center md:flex md:justify-around">
               <div>
                 <FontAwesomeIcon

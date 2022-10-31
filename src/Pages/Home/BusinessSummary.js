@@ -75,14 +75,16 @@ const BusinessSummary = () => {
 
       <div className="max-w-screen-sm w-full lg:w-2/4 flex justify-evenly items-center mx-auto mt-12 px-2">
         <h2 className="font-semibold text-2xl">Connect with us Now</h2>
-        <button className="btn btn-lg btn-primary rounded-full text-white animate-pulse">
-          Contact Us
-          <FontAwesomeIcon
-            icon={faArrowAltCircleRight}
-            size="lg"
-            className="ml-4"
-          />
-        </button>
+        <a href="#contactUs">
+          <button className="btn btn-lg btn-primary rounded-full text-white animate-pulse">
+            Contact Us
+            <FontAwesomeIcon
+              icon={faArrowAltCircleRight}
+              size="lg"
+              className="ml-4"
+            />
+          </button>
+        </a>
       </div>
     </section>
   );

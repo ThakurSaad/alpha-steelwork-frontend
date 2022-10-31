@@ -84,7 +84,7 @@ const Benefactors = () => {
       <section className="grid grid-cols-1 md:grid-cols-2 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
         <section className="flex flex-1 items-center justify-center">
           <div className="lg:w-10/12">
-            <h3 className="text-3xl text-primary font-bold mt-8 md:mt-0">
+            <h3 className="text-3xl text-primary font-bold mt-8 md:mt-0 mb-4">
               <Typewriter
                 options={{
                   strings: ["Our Most Trusted Advisors"],
