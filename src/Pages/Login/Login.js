@@ -54,8 +54,8 @@ const Login = () => {
       }}
       className="min-h-screen flex justify-center items-center"
     >
-      <div className="md:grid md:grid-cols-2">
-        <div className="card w-80 md:w-96 bg-base-100 shadow-xl">
+      <div className="md:grid md:grid-cols-2 items-center justify-items-center">
+        <div className="card w-80 md:w-96 bg-base-100 shadow-xl md:my-8">
           <div className="card-body">
             <h2 className="text-5xl font-bold text-center text-primary">
               Login
@@ -145,7 +145,7 @@ const Login = () => {
             <SocialLogin>Continue with google</SocialLogin>
           </div>
         </div>
-        <div className="w-96">
+        <div className="hidden md:block">
           <Icon />
         </div>
       </div>
