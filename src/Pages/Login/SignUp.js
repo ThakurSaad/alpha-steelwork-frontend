@@ -165,7 +165,7 @@ const SignUp = () => {
               </div>
               {errorElement}
               <input
-                className="btn btn-primary w-full max-w-xs"
+                className="btn bg-gradient-to-r from-primary border-0 w-full max-w-xs"
                 type="submit"
                 value="Sign Up"
               />

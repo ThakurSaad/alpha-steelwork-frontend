@@ -57,7 +57,7 @@ const Login = () => {
       <div className="md:grid md:grid-cols-2 items-center justify-items-center">
         <div className="card w-80 md:w-96 bg-base-100 shadow-xl md:my-8">
           <div className="card-body">
-            <h2 className="text-5xl font-bold text-center text-primary">
+            <h2 className="text-5xl font-extrabold text-center text-primary">
               Login
             </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -128,7 +128,7 @@ const Login = () => {
               </div>
               {errorElement}
               <input
-                className="btn btn-primary w-full max-w-xs"
+                className="btn bg-gradient-to-r from-primary border-0 w-full max-w-xs"
                 type="submit"
                 value="login"
               />

@@ -13,7 +13,7 @@ const Banner = () => {
           <img
             src={banner}
             alt="banner"
-            className="min-h-screen hidden md:block max-w-full"
+            className="max-h-screen hidden md:block w-full"
           />
           <img
             src={bannerSm}
