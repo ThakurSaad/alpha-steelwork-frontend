@@ -7,7 +7,7 @@ const AdminRow = ({ user, index, refetch }) => {
   const [admin] = useAdmin(user);
 
   const handleAdmin = () => {
-    fetch(`https://infinite-basin-98544.herokuapp.com/users/admin/${_id}`, {
+    fetch(`https://alpha-steelwork-backend.onrender.com/users/admin/${_id}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

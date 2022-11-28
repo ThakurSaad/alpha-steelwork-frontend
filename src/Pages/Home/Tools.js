@@ -10,7 +10,7 @@ const Tools = () => {
   const navigate = useNavigate();
 
   const { data: tools, isLoading } = useQuery("tools", () =>
-    fetch("https://infinite-basin-98544.herokuapp.com/tools").then((res) =>
+    fetch("https://alpha-steelwork-backend.onrender.com/tools").then((res) =>
       res.json()
     )
   );

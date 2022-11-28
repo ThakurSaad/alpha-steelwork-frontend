@@ -9,7 +9,7 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch("https://infinite-basin-98544.herokuapp.com/tools", {
+    fetch("https://alpha-steelwork-backend.onrender.com/tools", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

@@ -5,7 +5,7 @@ const DeleteOrderModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
   const { _id, customerName, productName, quantity } = deleteOrder || "";
 
   const handleConfirm = () => {
-    fetch(`https://infinite-basin-98544.herokuapp.com/order/${_id}`, {
+    fetch(`https://alpha-steelwork-backend.onrender.com/order/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

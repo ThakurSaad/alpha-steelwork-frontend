@@ -15,7 +15,7 @@ const ToolDetails = () => {
 
   const { data: tool } = useQuery(["tool", purchaseId], () =>
     fetch(
-      `https://infinite-basin-98544.herokuapp.com/tool/purchase/${purchaseId}`,
+      `https://alpha-steelwork-backend.onrender.com/tool/purchase/${purchaseId}`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -69,7 +69,7 @@ const ToolDetails = () => {
       quantity > parseInt(minOrderQuantity) &&
       quantity <= parseInt(availQuantity)
     ) {
-      fetch(`https://infinite-basin-98544.herokuapp.com/order`, {
+      fetch(`https://alpha-steelwork-backend.onrender.com/order`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

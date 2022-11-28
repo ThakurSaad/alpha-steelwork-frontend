@@ -14,7 +14,7 @@ const AddAReview = () => {
       description: event.target.description.value,
     };
 
-    fetch("https://infinite-basin-98544.herokuapp.com/reviews", {
+    fetch("https://alpha-steelwork-backend.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

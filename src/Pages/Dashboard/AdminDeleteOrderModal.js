@@ -8,7 +8,7 @@ const AdminDeleteOrderModal = ({ adminDeleteOrder, refetch }) => {
   const { _id, customerName, productName, quantity } = adminDeleteOrder || "";
 
   const handleConfirm = () => {
-    fetch(`https://infinite-basin-98544.herokuapp.com/order/${_id}`, {
+    fetch(`https://alpha-steelwork-backend.onrender.com/order/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

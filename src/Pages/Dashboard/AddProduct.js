@@ -13,7 +13,7 @@ const AddProduct = () => {
       price: event.target.price.value,
     };
 
-    fetch("https://infinite-basin-98544.herokuapp.com/tools", {
+    fetch("https://alpha-steelwork-backend.onrender.com/tools", {
       method: "POST",
       headers: {
         "content-type": "application/json",

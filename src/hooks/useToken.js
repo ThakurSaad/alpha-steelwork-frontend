@@ -8,7 +8,7 @@ const useToken = (user) => {
     const currentUser = { email: email };
 
     if (email) {
-      fetch(`https://infinite-basin-98544.herokuapp.com/users?email=${email}`, {
+      fetch(`https://alpha-steelwork-backend.onrender.com/users?email=${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

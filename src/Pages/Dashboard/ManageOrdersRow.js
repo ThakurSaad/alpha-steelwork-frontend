@@ -8,7 +8,7 @@ const ManageOrdersRow = ({ order, index, refetch }) => {
     order || "";
 
   const handlePending = () => {
-    fetch(`https://infinite-basin-98544.herokuapp.com/order/${_id}`, {
+    fetch(`https://alpha-steelwork-backend.onrender.com/order/${_id}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

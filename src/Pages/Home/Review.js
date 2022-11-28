@@ -24,7 +24,7 @@ import {
 
 const Review = () => {
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch("https://infinite-basin-98544.herokuapp.com/reviews").then((res) =>
+    fetch("https://alpha-steelwork-backend.onrender.com/reviews").then((res) =>
       res.json()
     )
   );

@@ -14,7 +14,7 @@ const CheckoutForm = ({ payForTool }) => {
   const { _id, shouldPay, customerName, customer } = payForTool || "";
 
   useEffect(() => {
-    fetch("https://infinite-basin-98544.herokuapp.com/create-payment-intent", {
+    fetch("https://alpha-steelwork-backend.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -80,7 +80,7 @@ const CheckoutForm = ({ payForTool }) => {
       customerName: customerName,
     };
 
-    fetch(`https://infinite-basin-98544.herokuapp.com/orders/${_id}`, {
+    fetch(`https://alpha-steelwork-backend.onrender.com/orders/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
